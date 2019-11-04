@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users do
+    #resources :comments, only: [:create, :destroy]
+    resources :interests, only: [:new, :create, :destroy]
+    resources :visits, only: [:new, :create]
+  end
+
+  root to: 'countries#index'
+  resources :countries, only: [:index, :show]
+  get 'about', to: 'pages#about', as: 'about'
+  get 'contact', to: 'pages#contact', as: 'contact'
 end
