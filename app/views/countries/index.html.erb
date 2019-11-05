@@ -1,7 +1,4 @@
-
-<h1>Countries#index</h1>
-<p>Find me in app/views/countries/index.html.erb</p>
-
+<h1>Countries </h1>
 
 <%= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path %>
 
@@ -11,7 +8,38 @@
 <%= link_to "sign out", destroy_user_session_path, method: :delete %>
 <% end %>
 
-<h1>Home (countries#index)</h1>
-<p><%= link_to "User 1", profile_path, class: "btn btn-primary"%></p>
-<h2>Connect With Other Users</h2>
+<p><%= link_to "Profile", profile_path(current_user), class: "btn btn-primary"%></p>
 
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">Africa</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Asia</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Australia</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Europe</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">North America</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">South America</a>
+  </li>
+</ul>
+
+<br>
+<br>
+<h2>Connect With Other Users</h2>
+<% @users.each do |user| %>
+  <%= link_to profile_path(user) do  %>
+      <div class="user-card">
+        <!-- <p>'#{user.first_name}'</p> -->
+        <%= image_tag avatar_url %>
+      </div>
+  <% end %>
+  <%#= link_to "#{user.first_name} Profile", profile_path(user) if user != current_user %>
+<% end %>
