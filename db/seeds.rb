@@ -11,20 +11,19 @@ require "rest-client"
 
 countries = ["france", "spain", "japan"]
 
-countries_list.each do |country_name|
+countries.each do |country_name|
   response = RestClient.get "https://restcountries.eu/rest/v2/name/#{country_name}"
   data = JSON.parse(response)
-  country = Country.new(
-    name: data.name,
 
+  country = Country.new(
+    name: data[0]["name"]
   )
 
-  country.create!
+  country.save!
   p country
 
   culture = Culture.new(
     country_id: country.id
   )
-
 end
 
