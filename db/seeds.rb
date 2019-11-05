@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "json"
+require "rest-client"
+
+countries = ["france", "spain", "japan"]
+
+countries_list.each do |country_name|
+  response = RestClient.get "https://restcountries.eu/rest/v2/name/#{country_name}"
+  data = JSON.parse(response)
+  country = Country.new(
+    name: data.name,
+
+  )
+
+  country.create!
+  p country
+
+  culture = Culture.new(
+    country_id: country.id
+  )
+
+end
+
