@@ -3,12 +3,12 @@
 <%= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path %>
 
 <% if user_signed_in? %>
+<p><%= link_to "Profile", profile_path(current_user), class: "btn btn-primary"%></p>
 <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
 <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 <%= link_to "sign out", destroy_user_session_path, method: :delete %>
 <% end %>
 
-<p><%= link_to "Profile", profile_path(current_user), class: "btn btn-primary"%></p>
 
 <ul class="list-inline tabs-underlined">
   <li>
@@ -36,10 +36,9 @@
 <h2>Connect With Other Users</h2>
 <% @users.each do |user| %>
   <%= link_to profile_path(user) do  %>
-      <div class="user-card">
-        <!-- <p>'#{user.first_name}'</p> -->
-        <%= image_tag avatar_url %>
+      <div class="user-card d-flex">
+        <p><%= user.first_name  %></p>
+        <%= image_tag "http://placehold.it/30x30", class: "avatar" %>
       </div>
   <% end %>
-  <%#= link_to "#{user.first_name} Profile", profile_path(user) if user != current_user %>
 <% end %>
