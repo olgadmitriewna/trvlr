@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   resources :countries, only: [:index, :show]
   get 'about', to: 'pages#about', as: 'about'
   get 'contact', to: 'pages#contact', as: 'contact'
-  get 'profile', to: 'pages#profile', as: 'profile'
+  get 'profile/:id', to: 'pages#profile', as: 'profile'
 end
