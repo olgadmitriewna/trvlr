@@ -1,6 +1,6 @@
 <h1>Countries </h1>
 
-<%= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path %>
+<%#= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path %>
 
 <% if user_signed_in? %>
 <p><%= link_to "Profile", profile_path(current_user), class: "btn btn-primary"%></p>
