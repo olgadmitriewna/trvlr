@@ -1,18 +1,5 @@
 <h1>Countries </h1>
 
-<%#= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path %>
-
-<% if user_signed_in? %>
-<p><%= link_to "Profile", profile_path(current_user), class: "btn btn-primary"%></p>
-<% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-<% end %>
-
-
-
-
-
-
-
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-africa" role="tab" aria-controls="pills-africa" aria-selected="true">Africa</a>
