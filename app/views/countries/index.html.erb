@@ -1,4 +1,4 @@
-<h1>Countries </h1>
+<h1>Continents </h1>
 
 <%#= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path %>
 
@@ -61,9 +61,9 @@
 <% @users.each do |user| %>
   <%= link_to profile_path(user) do  %>
       <div class="user-card d-flex">
-        <p><%= user.first_name  %></p>
         <%= image_tag "http://placehold.it/30x30", class: "avatar" %>
       </div>
+        <p><%= user.first_name  %></p>
   <% end %>
 <% end %>
 
