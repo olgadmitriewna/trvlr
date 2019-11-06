@@ -1,4 +1,12 @@
-<h1>User Profile</h1>
-<%#= @user. %>
-<p><%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-primary"%></p>
-<p><%= link_to "Back", countries_path, class: "btn btn-primary"%></p>
+<h1><%= @user.first_name %>'s Profile</h1>
+  <p><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></p>
+  <p><strong>Bio: </strong><%= @user.bio %></p>
+  <p><strong>Interested in traveling to: </strong><%= @user.travel_interests %></p>
+  <p><strong>Has traveled to: </strong><%= @user.visited %></p>
+
+<% if @user == current_user %>
+  <p><strong>Email: </strong><%= @user.email %></p>
+  <p><%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-primary"%></p>
+<% end %>
+
+  <p><%= link_to "Back", countries_path, class: "btn btn-primary"%></p>

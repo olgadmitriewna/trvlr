@@ -1,2 +1,38 @@
-<h1>Countries#show</h1>
 <p>Find me in app/views/countries/show.html.erb</p>
+
+<h1><%= @country.name %></h1>
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-culture-tab" data-toggle="pill" href="#pills-culture" role="tab" aria-controls="pills-culture" aria-selected="true">culture</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-health-tab" data-toggle="pill" href="#pills-health" role="tab" aria-controls="pills-health" aria-selected="false">health</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-vocabulary-tab" data-toggle="pill" href="#pills-vocabulary" role="tab" aria-controls="pills-vocabulary" aria-selected="true">vocabulary</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-visa-tab" data-toggle="pill" href="#pills-visa" role="tab" aria-controls="pills-visa" aria-selected="false">visa</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-places-tab" data-toggle="pill" href="#pills-places" role="tab" aria-controls="pills-places" aria-selected="false">North America</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-culture" role="tabpanel" aria-labelledby="pills-culture-tab">
+    <%= render 'culture' %>
+  </div>
+  <div class="tab-pane fade" id="pills-health" role="tabpanel" aria-labelledby="pills-health-tab">
+  <%= render 'health' %>
+  </div>
+  <div class="tab-pane fade" id="pills-vocabulary" role="tabpanel" aria-labelledby="pills-vocabulary-tab">
+  <%= render 'vocabulary' %>
+  </div>
+  <div class="tab-pane fade show" id="pills-visa" role="tabpanel" aria-labelledby="pills-visa-tab">
+  <%= render 'visa' %>
+  </div>
+  <div class="tab-pane fade" id="pills-places" role="tabpanel" aria-labelledby="pills-places-tab">
+  <%= render 'places' %>
+  </div>
+</div>
