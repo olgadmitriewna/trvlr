@@ -1,0 +1,5 @@
+<p>All the <%= continent_adj %> countries</p>
+
+<% countries.each do |country| %>
+  <%= link_to country.name,  country_path(country) %>
+<% end %>
