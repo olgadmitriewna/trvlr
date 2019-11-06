@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'omniauth-facebook'
 gem "rest-client"
+gem 'nokogiri'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
