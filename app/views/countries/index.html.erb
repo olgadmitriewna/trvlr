@@ -5,8 +5,6 @@
 <% if user_signed_in? %>
 <p><%= link_to "Profile", profile_path(current_user), class: "btn btn-primary"%></p>
 <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-<%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-<%= link_to "sign out", destroy_user_session_path, method: :delete %>
 <% end %>
 
 
