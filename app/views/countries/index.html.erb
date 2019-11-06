@@ -8,26 +8,52 @@
 <% end %>
 
 
-<ul class="list-inline tabs-underlined">
-  <li>
-    <a href="#" class="tab-underlined active">Africa</a>
+
+
+
+
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-africa" role="tab" aria-controls="pills-africa" aria-selected="true">Africa</a>
   </li>
-  <li>
-    <a href="#" class="tab-underlined">Asia</a>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-asia" role="tab" aria-controls="pills-asia" aria-selected="false">Asia</a>
   </li>
-  <li>
-    <a href="#" class="tab-underlined">Australia</a>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#pills-australia" role="tab" aria-controls="pills-australia" aria-selected="true">Australia</a>
   </li>
-  <li>
-    <a href="#" class="tab-underlined">Europe</a>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-europe" role="tab" aria-controls="pills-europe" aria-selected="false">Europe</a>
   </li>
-  <li>
-    <a href="#" class="tab-underlined">North America</a>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-north-america" role="tab" aria-controls="pills-north-america" aria-selected="false">North America</a>
   </li>
-  <li>
-    <a href="#" class="tab-underlined">South America</a>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-south-america" role="tab" aria-controls="pills-south-america" aria-selected="false">South America</a>
   </li>
 </ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-africa" role="tabpanel" aria-labelledby="pills-africa-tab">
+    <%= render 'africa', countries: @countries %>
+  </div>
+  <div class="tab-pane fade" id="pills-asia" role="tabpanel" aria-labelledby="pills-asia-tab">
+  <%= render 'asia', countries: @countries %>
+  </div>
+  <div class="tab-pane fade" id="pills-australia" role="tabpanel" aria-labelledby="pills-australia-tab">
+  <%= render 'australia', countries: @countries %>
+  </div>
+  <div class="tab-pane fade show" id="pills-europe" role="tabpanel" aria-labelledby="pills-europe-tab">
+  <%= render 'europe', countries: @countries %>
+  </div>
+  <div class="tab-pane fade" id="pills-north-america" role="tabpanel" aria-labelledby="pills-north-america-tab">
+  <%= render 'north_america', countries: @countries %>
+  </div>
+  <div class="tab-pane fade" id="pills-south-america" role="tabpanel" aria-labelledby="pills-south-america-tab">
+  <%= render 'south_america', countries: @countries %>
+  </div>
+</div>
+
 
 <br>
 <br>
@@ -40,3 +66,21 @@
       </div>
   <% end %>
 <% end %>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    <i class="fas fa-heart"></i> trvlr.
+  </div>
+</div>
+
+
+
+
+
