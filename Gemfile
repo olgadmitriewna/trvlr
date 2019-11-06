@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'devise'
 gem 'omniauth-facebook'
 gem "rest-client"
+gem 'nokogiri'
 gem 'geocoder'
 
 group :development do
