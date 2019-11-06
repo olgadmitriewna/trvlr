@@ -1,6 +1,7 @@
-#pills-tab {
-  justify-content: space-around;
-  background: white;
+.navbar-lewagon {
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,4 +14,5 @@
 
 .navbar-light .navbar-toggler-icon {
 }
+
 

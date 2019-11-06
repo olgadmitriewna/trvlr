@@ -1,7 +1,10 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  height: 400px;
+  background-attachment: fixed;
+  display: flex;
+  position: relative;
 }
 
 .banner h1 {
