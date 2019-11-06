@@ -7,17 +7,31 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "json"
 require "rest-client"
+
+puts 'creating users'
+
+user = User.new(first_name: 'Olga', email: 'olga@gmail.com', password: "password")
+user.save!
+
+user = User.new(first_name: 'Jesh', email: 'jesh@gmail.com', password: "password")
+user.save!
+
+user = User.new(first_name: 'Elise', email: 'elise@gmail.com', password: "password")
+user.save!
+
+puts 'users created'
+
 #Asia
 countries_list = ["Korea%20(Republic%20of)", "morocco", "south%20africa", "egypt", "tunisia", "algeria", "zimbabwe", "ivory%20coast", "botswana", "namibia", "mozambique", "united%20states", "mexico", "canada", "argentina", "brazil", "dominican%20republic", "chile", "cuba", "peru", "colombia", "china", "thailand", "japan", "hong%20kong", "malaysia", "macau", "india", "vietnam", "indonesia", "singapore", "france", "spain", "italy", "turkey", "germany", "united%20kingdom", "austria", "greece", "russia", "portugal", "saudi%20arabia", "united%20arab%20emirates", "egypt", "iran", "bahrain", "jordan", "israel", "oman", "qatar"]
 
-countries.each do |country_name|
+countries_list.each do |country_name|
   response = RestClient.get "https://restcountries.eu/rest/v2/name/#{country_name}"
   data = JSON.parse(response)
 
   country = Country.new(
     name: data.first["name"],
     region: data.first["region"]
-
+)
   country.save!
   p country
 
