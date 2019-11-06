@@ -19,6 +19,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem "rest-client"
 gem 'nokogiri'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

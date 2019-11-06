@@ -1,1 +1,10 @@
 <p>Places info</p>
+
+
+
+<div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+></div>
+
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}" %>

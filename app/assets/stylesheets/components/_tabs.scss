@@ -1,19 +1,37 @@
-.tabs-underlined {
+.nav-pills {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  position: relative;
 }
 
-.tabs-underlined .tab-underlined {
+.nav-item {
   color: black;
   padding: 8px;
   margin: 8px 16px;
-  opacity: .4;
+  // opacity: .5;
   cursor: pointer;
   text-decoration: none;
   border-bottom: 4px solid transparent;
 }
 
-.tabs-underlined .tab-underlined.active {
+.tab-bar .active {
+  opacity: 1;
+  border-bottom: 3px solid #555555;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-pills .nav-link.active {
+  color: black;
+  background-color: transparent;
+}
+
+.nav-link:hover {
+  color: black;
+  opacity: .7;
   opacity: 1;
   border-bottom: 3px solid #555555;
 }
