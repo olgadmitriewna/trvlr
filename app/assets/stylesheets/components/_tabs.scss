@@ -1,8 +1,11 @@
 .nav-pills {
-  display: flex;
+  display: -webkit-box;
   align-items: center;
   justify-content: space-around;
-  position: relative;
+  font-size: 16px;
+  overflow: auto;
+  white-space: nowrap;
+  background-color: white;
 }
 
 .nav-item {
@@ -17,7 +20,7 @@
 
 .tab-bar .active {
   opacity: 1;
-  border-bottom: 3px solid #555555;
+  border-bottom: 3px solid #FFD364;
 }
 
 .nav-link {
@@ -27,11 +30,17 @@
 .nav-pills .nav-link.active {
   color: black;
   background-color: transparent;
+  border-bottom: 3px solid #FFD364;
 }
 
 .nav-link:hover {
   color: black;
   opacity: .7;
   opacity: 1;
-  border-bottom: 3px solid #555555;
+  border-bottom: 3px solid #FFD364;;
 }
+
+#continent-tabs {
+  background-color: white;
+}
+
