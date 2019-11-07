@@ -5,7 +5,10 @@ require "json"
 require "rest-client"
 
 puts 'creating users'
-
+Phrase.destroy_all
+Vocabulary.destroy_all
+User.destroy_all
+Country.destroy_all
 user = User.new(first_name: 'Olga', email: 'olga@gmail.com', password: "password")
 user.save!
 
@@ -22,10 +25,10 @@ countries_list = ["morocco", "south%20africa", "tunisia", "algeria", "zimbabwe",
  countries_list.each do |country_name|
    response = RestClient.get "https://restcountries.eu/rest/v2/name/#{country_name}"
    data = JSON.parse(response)
-
    country = Country.new(
      name: data.first["name"],
-     region: data.first["region"]
+     region: data.first["region"],
+     language: data.first["languages"][0]["iso639_1"]
    )
 
    country.save!
@@ -65,31 +68,59 @@ end
 #  end
 # end
 
-# french_vocab = Vocabulary.new(country_id: 13)
-# italy_vocab = Vocabulary.new(country_id: 33)
-# # words = [
-# #   {
-# #     vocabulary: french_vocab,
-# #     original: 'Hello',
-# #     translation: 'Bonjour'
-# #   },
-# #   {
-# #     vocabulary: italy_vocab,
-# #     original: 'Hello',
-# #     translation: '....'
-# #   }
-# # ]
+malay_vocab = Vocabulary.new(country_id: 30)
+chinese_vocab = Vocabulary.new(country_id: 21)
+french_vocab = Vocabulary.new(country_id: 13)
 
-# french_words = [
-#   { translation:'Bonjour', original: 'Hello' },
-#   'Merci',
-#   'Bon Appetit'
-# ]
+malay_words = [
+  {translation: 'Hello', english: 'Hello'},
+  {translation: 'Selamat tinggal', english: 'Goodbye'},
+  {translation: 'Apa khabar?', english: 'How are you?'},
+  {translation: 'Berapakah kosnya?', english: 'How much does it cost?'},
+  {translation: 'Bagaimana saya boleh sampai ..?', english: 'How do I get to..?'},
+  {translation: 'Ya', english: 'Yes'},
+  {translation: 'tidak', english: 'No'},
+  { translation:'Boleh saya..?', english: 'Can I have..?' },
+  { translation:'Terima kasih', english: 'Thank you' }
+]
 
-# french_words.each do |word|
-#   Phrase.create!(
-#     vocabulary: french_vocab,
-#     original: word[:original],
-#     translation: word[:translation]
-#   )
-# end
+malay_words.each do |word|
+  Phrase.create!(
+    vocabulary: malay_vocab,
+    english: word[:english],
+    translation: word[:translation]
+  )
+end
+
+chinese_words = [
+  {translation: 'Nǐ hǎo', english: 'Hello'},
+  {translation: 'Zàijiàn', english: 'Goodbye'},
+  {translation: 'Nǐ hǎo ma?', english: 'How are you?'},
+  {translation: 'Tā yào duōshǎo qián?', english: 'How much does it cost?'},
+  {translation: 'Wǒ zěnme qù?', english: 'How do I get to..?'},
+  {translation: 'Shì', english: 'Yes'},
+  {translation: 'Méiyǒu', english: 'No'},
+  { translation:'Wǒ néng yǒu...... Ma?', english: 'Can I have..?' },
+  { translation:'Xièxiè', english: 'Thank You' }
+]
+
+chinese_words.each do |word|
+  Phrase.create!(
+    vocabulary: chinese_vocab,
+    english: word[:english],
+    translation: word[:translation]
+  )
+end
+
+french_words = [
+  { translation:'Bonjour', english: 'Hello' },
+  { translation:'Merci', english: 'Thank you'}
+]
+
+french_words.each do |word|
+  Phrase.create!(
+    vocabulary: french_vocab,
+    english: word[:english],
+    translation: word[:translation]
+  )
+end
