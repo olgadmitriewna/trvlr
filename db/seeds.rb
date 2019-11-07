@@ -66,3 +66,31 @@ end
 #  end
 # end
 
+french_vocab = Vocabulary.new(country_id: 13)
+italy_vocab = Vocabulary.new(country_id: 33)
+# words = [
+#   {
+#     vocabulary: french_vocab,
+#     original: 'Hello',
+#     translation: 'Bonjour'
+#   },
+#   {
+#     vocabulary: italy_vocab,
+#     original: 'Hello',
+#     translation: '....'
+#   }
+# ]
+
+french_words = [
+  { translation:'Bonjour', original: 'Hello' },
+  'Merci',
+  'Bon Appetit'
+]
+
+french_words.each do |word|
+  Phrase.create!(
+    vocabulary: french_vocab,
+    original: word[:original],
+    translation: word[:translation]
+  )
+end
