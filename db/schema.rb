@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_034641) do
     t.index ["country_id"], name: "index_vocabularies_on_country_id"
   end
 
+  add_foreign_key "comments", "users"
   add_foreign_key "cultures", "countries"
   add_foreign_key "health_tips", "healths"
   add_foreign_key "healths", "countries"
