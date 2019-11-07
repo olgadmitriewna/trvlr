@@ -1,14 +1,12 @@
 <div class="countries-list">
   <div class="row">
-  <% @countries.where(region: continent_adj).each do |country| %>
-  <div class="country-card col-6 col-lg-1">
-  <%= link_to country_path(country) do %>
-  <div>
-    <p><%= country.name %></p>
-    <%= image_tag "http://placehold.it/175x175" %>
+    <% @countries.where(region: continent_adj).each do |country| %>
+      <div class="country-card col-6">
+        <%= link_to country_path(country) do %>
+          <p><%= country.name %></p>
+          <%= image_tag "http://placehold.it/175x175" %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-</div>
-<% end %>
-<% end %>
-</div>
 </div>
