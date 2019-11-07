@@ -17,7 +17,7 @@ user.save!
 
 puts 'users created'
 
-countries_list = ["morocco", "south%20africa", "egypt", "tunisia", "algeria", "zimbabwe", "ivory%20coast", "botswana", "namibia", "mozambique", "united%20states", "mexico", "canada", "argentina", "brazil", "dominican%20republic", "chile", "cuba", "peru", "colombia", "china", "thailand", "japan", "hong%20kong", "malaysia", "macau", "india", "vietnam", "indonesia", "singapore", "france", "spain", "italy", "turkey", "germany", "united%20kingdom", "austria", "greece", "russia", "portugal", "saudi%20arabia", "united%20arab%20emirates", "egypt", "iran", "bahrain", "jordan", "israel", "oman", "qatar"]
+countries_list = ["morocco", "south%20africa", "tunisia", "algeria", "zimbabwe", "ivory%20coast", "botswana", "namibia", "mozambique", "united%20states", "mexico", "canada", "argentina", "brazil", "dominican%20republic", "chile", "cuba", "peru", "colombia", "china", "thailand", "japan", "hong%20kong", "malaysia", "macau", "india", "vietnam", "indonesia", "singapore", "france", "spain", "italy", "turkey", "germany", "united%20kingdom", "austria", "greece", "russia", "portugal", "saudi%20arabia", "united%20arab%20emirates", "egypt", "iran", "bahrain", "jordan", "israel", "oman", "qatar"]
 
  countries_list.each do |country_name|
    response = RestClient.get "https://restcountries.eu/rest/v2/name/#{country_name}"
@@ -25,8 +25,7 @@ countries_list = ["morocco", "south%20africa", "egypt", "tunisia", "algeria", "z
 
    country = Country.new(
      name: data.first["name"],
-     region: data.first["region"],
-     language: data.first["name"]
+     region: data.first["region"]
    )
 
    country.save!
@@ -66,31 +65,31 @@ end
 #  end
 # end
 
-french_vocab = Vocabulary.new(country_id: 13)
-italy_vocab = Vocabulary.new(country_id: 33)
-# words = [
-#   {
-#     vocabulary: french_vocab,
-#     original: 'Hello',
-#     translation: 'Bonjour'
-#   },
-#   {
-#     vocabulary: italy_vocab,
-#     original: 'Hello',
-#     translation: '....'
-#   }
+# french_vocab = Vocabulary.new(country_id: 13)
+# italy_vocab = Vocabulary.new(country_id: 33)
+# # words = [
+# #   {
+# #     vocabulary: french_vocab,
+# #     original: 'Hello',
+# #     translation: 'Bonjour'
+# #   },
+# #   {
+# #     vocabulary: italy_vocab,
+# #     original: 'Hello',
+# #     translation: '....'
+# #   }
+# # ]
+
+# french_words = [
+#   { translation:'Bonjour', original: 'Hello' },
+#   'Merci',
+#   'Bon Appetit'
 # ]
 
-french_words = [
-  { translation:'Bonjour', original: 'Hello' },
-  'Merci',
-  'Bon Appetit'
-]
-
-french_words.each do |word|
-  Phrase.create!(
-    vocabulary: french_vocab,
-    original: word[:original],
-    translation: word[:translation]
-  )
-end
+# french_words.each do |word|
+#   Phrase.create!(
+#     vocabulary: french_vocab,
+#     original: word[:original],
+#     translation: word[:translation]
+#   )
+# end

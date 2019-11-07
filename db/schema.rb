@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2019_11_07_033446) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "region"
-    t.string "language"
     t.float "longitude"
     t.float "latitude"
   end
@@ -166,7 +165,6 @@ ActiveRecord::Schema.define(version: 2019_11_07_033446) do
     t.index ["country_id"], name: "index_vocabularies_on_country_id"
   end
 
-  add_foreign_key "comments", "users"
   add_foreign_key "cultures", "countries"
   add_foreign_key "health_tips", "healths"
   add_foreign_key "healths", "countries"
