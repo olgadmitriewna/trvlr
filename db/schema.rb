@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_11_07_033446) do
 
   # These are extensions that must be enabled in order to support this database
@@ -121,6 +122,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_033446) do
     t.string "bio"
     t.string "travel_interests"
     t.string "visited"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -166,7 +168,6 @@ ActiveRecord::Schema.define(version: 2019_11_07_033446) do
     t.index ["country_id"], name: "index_vocabularies_on_country_id"
   end
 
-  add_foreign_key "comments", "users"
   add_foreign_key "cultures", "countries"
   add_foreign_key "health_tips", "healths"
   add_foreign_key "healths", "countries"
