@@ -1,4 +1,4 @@
-<p>Vocab info</p>
-
-
-<%= @translation %>
+<h1>Useful Phrases you may need in <%=@country.name  %></h1>
+<% @phrases.each do |phrase| %>
+<p> <%= phrase.english %> : <%= phrase.translation %> </p>
+<% end %>

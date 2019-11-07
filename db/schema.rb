@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 2019_11_07_033446) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "region"
-    t.string "language"
     t.float "longitude"
     t.float "latitude"
+    t.string "language"
   end
 
   create_table "culture_tips", force: :cascade do |t|
@@ -75,10 +75,10 @@ ActiveRecord::Schema.define(version: 2019_11_07_033446) do
   create_table "phrases", force: :cascade do |t|
     t.text "english"
     t.text "translation"
-    t.bigint "vocabularies_id"
+    t.bigint "vocabulary_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["vocabularies_id"], name: "index_phrases_on_vocabularies_id"
+    t.index ["vocabulary_id"], name: "index_phrases_on_vocabulary_id"
   end
 
   create_table "pins", force: :cascade do |t|
@@ -173,7 +173,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_033446) do
   add_foreign_key "healths", "countries"
   add_foreign_key "interests", "countries"
   add_foreign_key "interests", "users"
-  add_foreign_key "phrases", "vocabularies", column: "vocabularies_id"
+  add_foreign_key "phrases", "vocabularies"
   add_foreign_key "pins", "places"
   add_foreign_key "places", "countries"
   add_foreign_key "vaccines", "healths"
