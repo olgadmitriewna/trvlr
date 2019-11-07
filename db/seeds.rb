@@ -66,8 +66,9 @@ end
 #  end
 # end
 
+malay_vocab = Vocabulary.new(country_id: 30)
+chinese_vocab = Vocabulary.new(country_id: 21)
 french_vocab = Vocabulary.new(country_id: 13)
-italy_vocab = Vocabulary.new(country_id: 33)
 # words = [
 #   {
 #     vocabulary: french_vocab,
@@ -80,11 +81,47 @@ italy_vocab = Vocabulary.new(country_id: 33)
 #     translation: '....'
 #   }
 # ]
+malay_words = [
+  {translation: 'Hello', original: 'Hello'},
+  {translation: 'Selamat tinggal', original: 'Goodbye'},
+  {translation: 'Apa khabar?', original: 'How are you?'},
+  {translation: 'Berapakah kosnya?', original: 'How much does it cost?'},
+  {translation: 'Bagaimana saya boleh sampai ..?', original: 'How do I get to..?'},
+  {translation: 'Ya', original: 'Yes'},
+  {translation: 'tidak', original: 'No'},
+  { translation:'Boleh saya..?', original: 'Can I have..?' },
+  { translation:'Terima kasih', original: 'Thank you' }
+]
+
+malay_words.each do |word|
+  Phrase.create!(
+    vocabulary: malay_vocab,
+    original: word[:original]
+    translation: word[:translation]
+  )
+
+chinese_words = [
+  {translation: 'Nǐ hǎo', original: 'Hello'},
+  {translation: 'Zàijiàn', original: 'Goodbye'},
+  {translation: 'Nǐ hǎo ma?', original: 'How are you?'},
+  {translation: 'Tā yào duōshǎo qián?', original: 'How much does it cost?'},
+  {translation: 'Wǒ zěnme qù?', original: 'How do I get to..?'},
+  {translation: 'Shì', original: 'Yes'},
+  {translation: 'Méiyǒu', original: 'No'},
+  { translation:'Wǒ néng yǒu...... Ma?', original: 'Can I have..?' },
+  { translation:'Xièxiè', original: 'Thank You' }
+]
+
+chinese_words.each do |word|
+  Phrase.create!(
+    vocabulary: chinese_vocab,
+    original: word[:original]
+    translation: word[:translation]
+  )
 
 french_words = [
   { translation:'Bonjour', original: 'Hello' },
-  'Merci',
-  'Bon Appetit'
+  { translation:'Merci', original: 'Thank you'}
 ]
 
 french_words.each do |word|
