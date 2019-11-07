@@ -16,6 +16,10 @@ const initMap = () => {
       map.fitLatLngBounds(markers);
     }
   }
+  // Set initial size of the map
+  mapElement.style.height = "900px"
+  mapElement.style.width = "900px"
+
 }
 
 export { initMap };
