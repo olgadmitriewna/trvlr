@@ -1,4 +1,5 @@
 <h1>Useful Phrases you may need in <%=@country.name  %></h1>
 <% @phrases.each do |phrase| %>
-<p> <%= phrase.english %> : <%= phrase.translation %> </p>
+  <p> <%= phrase.english %> : <%= phrase.translation %> </p>
+  <%= link_to "+", new_user_phrase_path(phrase), method: :post %>
 <% end %>
