@@ -2,17 +2,21 @@
   background-size: cover;
   background-position: center;
   height: 400px;
+  margin-top: -60px;
+  width: 100%;
   background-attachment: fixed;
   display: flex;
   position: relative;
+  align-items: center;
 }
 
 .banner h1 {
-  margin: 0;
+  width: 75%;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   font-size: 32px;
-  font-weight: bold;
+  // font-weight: bold;
+  display: flex;
 }
 
 .banner p {
@@ -21,3 +25,16 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+// .info-section i {
+//   border: solid black;
+//   border-width: 0 3px 3px 0;
+//   display: inline-block;
+//   padding: 3px;
+//   z-index: 10;
+// }
+
+// .right {
+//   transform: rotate(-45deg);
+//   -webkit-transform: rotate(-45deg);
+// }
