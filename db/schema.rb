@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_071921) do
+ActiveRecord::Schema.define(version: 2019_11_06_100031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_071921) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "region"
+    t.string "language"
   end
 
   create_table "culture_tips", force: :cascade do |t|
@@ -163,6 +164,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_071921) do
     t.index ["country_id"], name: "index_vocabularies_on_country_id"
   end
 
+  add_foreign_key "comments", "users"
   add_foreign_key "cultures", "countries"
   add_foreign_key "health_tips", "healths"
   add_foreign_key "healths", "countries"
