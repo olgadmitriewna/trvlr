@@ -1,5 +1,19 @@
 .country-card {
-  height: 25%;
-  width: 25%;
+  width: 50%;
+  height: 200px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
   grid-auto-columns: auto;
+}
+
+.row {
+  margin-bottom: 24px;
+}
+
+.country-card p {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  color: black;
 }

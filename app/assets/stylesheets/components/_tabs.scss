@@ -6,12 +6,16 @@
   overflow: auto;
   white-space: nowrap;
   background-color: white;
+  height: 75px;
+  border-top-style: solid;
+  border-width: 8px;
+  border-color: #FFD364;
 }
 
 .nav-item {
   color: black;
   padding: 8px;
-  margin: 8px 16px;
+  margin: 0px 8px;
   // opacity: .5;
   cursor: pointer;
   text-decoration: none;
