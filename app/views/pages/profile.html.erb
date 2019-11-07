@@ -9,4 +9,16 @@
   <p><%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-primary"%></p>
 <% end %>
 
+<div class="phrases">
+  <h2>My Phrases:</h2>
+  <ul>
+    <% @user.phrases.each do |phrase| %>
+      <li>
+        <%= phrase.english %> : <%= phrase.translation %>
+      </li>
+    <% end %>
+
+</ul>
+</div>
+
   <p><%= link_to "Back", countries_path, class: "btn btn-primary"%></p>
