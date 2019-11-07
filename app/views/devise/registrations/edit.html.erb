@@ -12,6 +12,8 @@
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :bio, required: false %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.input :travel_interests, required: false %>
     <%= f.input :visited, required: false %>
     <%= f.input :email, required: true, autofocus: true %>
@@ -34,4 +36,4 @@
   </div>
 <% end %>
 
-<%= link_to "Back", profile_path %>
+<%= link_to "Back", profile_path(@user) %>
