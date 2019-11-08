@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'user_phrases/create'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -15,4 +16,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
   get 'contact', to: 'pages#contact', as: 'contact'
   get 'profile/:id', to: 'pages#profile', as: 'profile'
+  post 'phrases/:id/user_phrases', to: "user_phrases#create", as: :new_user_phrase
+
 end
+
