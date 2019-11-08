@@ -16,9 +16,6 @@
         <a class="nav-link" id="pills-asia-tab" data-toggle="pill" href="#pills-asia" role="tab" aria-controls="pills-asia" aria-selected="false">Asia</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="pills-australia-tab" data-toggle="pill" href="#pills-australia" role="tab" aria-controls="pills-australia" aria-selected="true">Australia</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" id="pills-europe-tab" data-toggle="pill" href="#pills-europe" role="tab" aria-controls="pills-europe" aria-selected="false">Europe</a>
       </li>
       <li class="nav-item">
@@ -35,9 +32,6 @@
     </div>
     <div class="tab-pane fade" id="pills-asia" role="tabpanel" aria-labelledby="pills-asia-tab">
     <%= render 'continent', countries: @countries, continent_adj: "Asia" %>
-    </div>
-    <div class="tab-pane fade" id="pills-australia" role="tabpanel" aria-labelledby="pills-australia-tab">
-    <%= render 'continent', countries: @countries, continent_adj: "Australia" %>
     </div>
     <div class="tab-pane fade show" id="pills-europe" role="tabpanel" aria-labelledby="pills-europe-tab">
     <%= render 'continent', countries: @countries, continent_adj: "Europe" %>
