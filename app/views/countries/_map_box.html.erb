@@ -1,4 +1,4 @@
 <h1><%= place.name %></h1>
-<%= image_tag place.photo %>
-<p><%= place.city %></p>
-<p>hello</p>
+<img class="place-img" style="height: 200px; width: 200px;" src="<%= place.photo%>" >
+<p><b>City:</b> <%= place.city %></p>
+<p><%= link_to 'More info', place.link %></p>

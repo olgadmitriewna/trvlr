@@ -144,9 +144,9 @@ end
 
 #VOCABULARY
 
-malay_vocab = Vocabulary.new(country_id: 30)
-chinese_vocab = Vocabulary.new(country_id: 21)
-french_vocab = Vocabulary.new(country_id: 13)
+malay_vocab = Vocabulary.new(country: Country.where(name: 'Singapore').first)
+chinese_vocab = Vocabulary.new(country: Country.where(name: 'China').first)
+french_vocab = Vocabulary.new(country_id: Country.where(name: 'France').first)
 
 malay_words = [
   {translation: 'Hello', english: 'Hello'},
