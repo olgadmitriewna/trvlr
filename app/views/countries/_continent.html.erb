@@ -1,10 +1,10 @@
 <div class="countries-list">
-  <div class="row">
+  <div class="d-flex flex-wrap">
     <% @countries.where(region: continent_adj).each do |country| %>
-      <div class="country-card col-6">
+      <div class="country-card">
         <%= link_to country_path(country) do %>
           <p><%= country.name %></p>
-          <img class="country-photo"><%= image_tag country.photo %></img>
+          <%= image_tag country.photo, class: "country-photo" %>
         <% end %>
       </div>
     <% end %>
