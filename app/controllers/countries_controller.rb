@@ -28,9 +28,8 @@ class CountriesController < ApplicationController
     # end
     # translate = Google::Cloud::Translate.new version: :v2, project_id: project_id
     # @translation = translate.translate text, to: language_code
-
-    # @original = ["Hello", "Goodbye", "How are you?", "How much does it cost?", "How do I get to..?", "yes", "no", "Can I have..?", "Thank you"]
     @phrases = @country.vocabularies[0] ? @country.vocabularies[0].phrases : []
+    # @country.vocabularies[0].phrases : []
     # @phrases = @country.vocabulary
     # @country.vocabularies.phrases do |vocab|
     #   {
