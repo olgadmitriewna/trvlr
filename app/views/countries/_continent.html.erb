@@ -4,7 +4,7 @@
       <div class="country-card col-6">
         <%= link_to country_path(country) do %>
           <p><%= country.name %></p>
-          <%= image_tag "http://placehold.it/175x175" %>
+          <img class="country-photo"><%= image_tag country.photo %></img>
         <% end %>
       </div>
     <% end %>
