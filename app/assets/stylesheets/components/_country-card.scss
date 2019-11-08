@@ -17,3 +17,10 @@
   margin: 0;
   color: black;
 }
+
+.country-card a {
+  text-decoration: none;
+  :hover {
+    color: $yellow;
+  }
+}
