@@ -43,7 +43,6 @@ countries_list = ["morocco", "south%20africa", "tunisia", "algeria", "zimbabwe",
 
    country.save!
    p country
-
 end
 
 #scraping site for places information
@@ -85,7 +84,13 @@ csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 CSV.foreach(filepath, csv_options) do |row|
   country = Country.where("name ILIKE ?", "%#{row["country"]}%").first
   place = Place.new(photo: row["imglink"], link: row["infolink"], name: row["name"], city: row["city"], latitude: row["lat"], longitude: row["lng"], country: country )
-   puts place if place.save
+   puts "opened row"
+   if place.save
+    puts "saved"
+  else
+    p place.errors.messages
+  end
+
 end
 
 #VOCABULARY
