@@ -1,24 +1,47 @@
-<h1><%= @user.first_name %>'s Profile</h1>
-  <p><strong>Name: </strong><%= @user.first_name %> <%= @user.last_name %></p>
-  <p><strong>Bio: </strong><%= @user.bio %></p>
-  <p><strong>Interested in traveling to: </strong><%= @user.travel_interests %></p>
-  <p><strong>Has traveled to: </strong><%= @user.visited %></p>
+<div class="container mt-6">
+  <div class="d-flex flex-column bd-highlight mb-2">
+    <div class="p-2 m-6 bd-highlight text-center">
+      <img class="avatar-large mt-6" alt="avatar-large" src="<%= @user.photo %>">
+    </div>
+</div>
+
+
+    <div class="p-2 bd-highlight">
+      <h2 class="card-description text-center">Hello, I'm <%=@user.first_name%></h2>
+    </div>
+    <div class="p-2 bd-highlight">
+      <p class="card-description text-center"> <%= @user.email %> </p>
+    </div>
+  </div>
+
+<div class="container my-5">
+  <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
+  <p>Bio: <%= @user.bio %></p>
+  <p>Interested in traveling to: <%= @user.travel_interests %></p>
+  <p>Has traveled to: <%= @user.visited %></p>
 
 <% if @user == current_user %>
-  <p><strong>Email: </strong><%= @user.email %></p>
   <p><%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-primary"%></p>
 <% end %>
 
-<div class="phrases">
-  <h2>My Phrases:</h2>
-  <ul>
-    <% @user.phrases.each do |phrase| %>
-      <li>
-        <%= phrase.english %> : <%= phrase.translation %>
-      </li>
-    <% end %>
+<h2>My Countries:</h2>
 
-</ul>
+<div class="country-card col-6">
+    <p><%= @country.name %></p>
+    <img class="country-photo"><%= image_tag @country.photo %></img>
 </div>
 
+<!-- <div class="phrases m-6">
+  <h2>My Vocabularies:</h2>
+  <ul>
+    <#% @user.phrases.each do |phrase| %>
+      <li>
+        <#%= phrase.english %> : <#%= phrase.translation %>
+      </li>
+    <#% end %>
+</ul>
+</div>
+ -->
+ <div>
   <p><%= link_to "Back", countries_path, class: "btn btn-primary"%></p>
+</div>
