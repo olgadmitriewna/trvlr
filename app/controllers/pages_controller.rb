@@ -4,6 +4,8 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
+    @country = Country.find(params[:id])
+    @photo = @country.photo
   end
 
   def about
