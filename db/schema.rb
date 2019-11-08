@@ -101,6 +101,10 @@ ActiveRecord::Schema.define(version: 2019_11_08_034918) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "photo"
+    t.string "link"
+    t.string "city"
+    t.string "name"
     t.index ["country_id"], name: "index_places_on_country_id"
   end
 

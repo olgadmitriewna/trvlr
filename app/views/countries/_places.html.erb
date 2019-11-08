@@ -9,3 +9,12 @@
 ></div>
 
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}" %>
+
+<div>
+  <% @places.each do |place| %>
+  <img src="<%= place.photo %>" alt="">
+  <%= place.name %>
+  <%= place.city %>
+  <% end  %>
+</div>
+
