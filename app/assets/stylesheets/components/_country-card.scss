@@ -18,9 +18,15 @@
   color: black;
 }
 
+
 .country-card a {
   text-decoration: none;
   :hover {
     color: $yellow;
   }
+
+.country-card img {
+  width: 175px;
+  height: 140px;
+  display: flex;
 }

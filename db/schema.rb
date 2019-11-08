@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_11_07_102148) do
 
   # These are extensions that must be enabled in order to support this database
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_102148) do
     t.float "longitude"
     t.float "latitude"
     t.string "language"
+    t.string "photo"
   end
 
   create_table "culture_tips", force: :cascade do |t|

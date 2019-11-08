@@ -6,6 +6,7 @@ class CountriesController < ApplicationController
 
   def show
     @country = Country.find(params[:id])
+    @photo = @country.photo
     @places = @country.places
     @marker = { lat: @country.latitude, lng: @country.longitude }
     @markers = @places.map do |place|
