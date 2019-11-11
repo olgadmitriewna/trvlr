@@ -11,15 +11,16 @@
 }
 
 .banner h1 {
-  width: 47%;
+  width: 275px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  font-size: 32px;
+  font-size: 31px;
   color: black;
   // font-weight: bold;
   display: flex;
   text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.22);
-  align-items: flex-end;
-  margin-bottom: 121px;
+  margin-bottom: 216px;
+  margin-left: 36px;
+  text-align: center;
 }
 
 .banner p {
@@ -27,6 +28,12 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+@media screen and (min-width: 480px) {
+ .banner {
+    height: 475px;
+ }
 }
 
 // .info-section i {
