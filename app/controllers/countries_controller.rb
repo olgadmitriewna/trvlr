@@ -83,8 +83,8 @@ class CountriesController < ApplicationController
     info2 = datas["visa"].first["textual"]["text"][2] # "An eVisa is delivered electronically, and can be obtained online before your trip to Vietnam."
 
     # passport
-    blank_pages = datas["passport"]["textual"]["blank_pages"]["text"][1] # Your passport must have one blank page.
-    valid = datas["passport"]["textual"]["passport_validity"]["text"][1] # Your passport must be valid for six months at the time you enter Vietnam."
+    blank_pages = nil #= datas["passport"]["textual"]["blank_pages"]["text"][1] # Your passport must have one blank page.
+    valid = nil #= datas["passport"]["textual"]["passport_validity"]["text"][1] # Your passport must be valid for six months at the time you enter Vietnam."
 
     # vaccination
 
