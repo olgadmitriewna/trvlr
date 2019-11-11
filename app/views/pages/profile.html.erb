@@ -3,10 +3,21 @@
     <div class="p-2 m-6 bd-highlight text-center">
       <img class="avatar-large mt-6" alt="avatar-large" src="<%= @user.photo %>">
     </div>
+
   </div>
 
   <div class="p-2 bd-highlight">
     <h2 class="card-description text-center">Hello, I'm <%=@user.first_name%></h2>
+
+</div>
+
+    <div class="p-2 bd-highlight">
+      <h2 class="card-description text-center">Hello, I'm <%=@user.first_name%></h2>
+    </div>
+    <div class="p-2 bd-highlight">
+      <p class="card-description text-center"> <%= @user.email %> </p>
+    </div>
+
   </div>
   <div class="p-2 bd-highlight">
     <p class="card-description text-center"> <%= @user.email %> </p>

@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_045500) do
     t.float "latitude"
     t.string "language"
     t.string "photo"
+    t.string "code"
   end
 
   create_table "culture_tips", force: :cascade do |t|
