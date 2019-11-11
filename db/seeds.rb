@@ -35,7 +35,7 @@ countries_list = {
   "botswana" => "https://images.unsplash.com/photo-1553775927-a071d5a6a39a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1878&q=80",
   "namibia" => "https://images.unsplash.com/photo-1413977886085-3bbbf9a7cf6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   "mozambique" => "https://images.unsplash.com/photo-1544298903-35eee5a95b4d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1995&q=80",
-  "united%20states" => "https://images.pexels.com/photos/450597/pexels-photo-450597.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  "usa" => "https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
   "mexico" => "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
   "canada" => "https://images.unsplash.com/photo-1549064453-305277d30266?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
   "argentina" => "https://images.unsplash.com/photo-1545832063-74f2d924b61a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
@@ -51,7 +51,7 @@ countries_list = {
   "hong%20kong" => "https://images.unsplash.com/photo-1507941097613-9f2157b69235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2013&q=80",
   "malaysia" => "https://images.unsplash.com/photo-1541364354879-dd13266ab4ee?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1526&q=80",
   "macau" => "https://images.unsplash.com/photo-1556709911-93a82c864ece?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-  #"india" => "https://images.pexels.com/photos/1007431/pexels-photo-1007431.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+  "india" => "https://images.pexels.com/photos/1007431/pexels-photo-1007431.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
   "vietnam" => "https://images.unsplash.com/photo-1480996408299-fc0e830b5db1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80",
   "indonesia" => "https://images.pexels.com/photos/1020016/pexels-photo-1020016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   "singapore" => "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1549&q=80",
@@ -81,8 +81,18 @@ countries_list = {
  countries_list.each do |country_name, url|
    response = RestClient.get "https://restcountries.eu/rest/v2/name/#{country_name}"
    data = JSON.parse(response)
+    case data.first["name"]
+      when "British Indian Ocean Territory"
+      name = "India"
+      when "United Kingdom of Great Britain and Northern Ireland"
+      name = "Great Britain"
+      when "Iran (Islamic Republic of)"
+      name = "Iran"
+      else
+      name = data.first["name"]
+    end
    country = Country.new(
-     name: data.first["name"],
+     name: name,
      photo: url,
      code: data.first["alpha3Code"],
      region: data.first["region"],
