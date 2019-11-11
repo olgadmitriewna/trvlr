@@ -1,23 +1,15 @@
-.country-card {
-  width: 50%;
-  height: 200px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  grid-auto-columns: auto;
-}
+// .country-card {
+//   width: 50%;
+//   height: 200px;
+//   padding: 0;
+//   display: flex;
+//   justify-content: center;
+//   grid-auto-columns: auto;
+// }
 
 .row {
   margin-bottom: 24px;
 }
-
-.country-card p {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  color: black;
-}
-
 
 .country-card a {
   text-decoration: none;
@@ -27,7 +19,7 @@
 }
 
 .country-card img {
-  width: 188px;
+  // width: 375px;
   height: 175px;
   display: flex;
   // background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.8));
@@ -45,3 +37,38 @@
     font-size: 24px
   }
 }
+.country-card {
+  p {
+    margin-bottom: 0px;
+    font-size: 31px;
+  }
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width: 375px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  // border-radius: 6px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 4px;
+}
+
+
+@media screen and (min-width: 480px) {
+ .country-card {
+    width: 200px;
+ }
+}
+
+
+// @media screen and (min-width: 780px) {
+//  .country-card {
+//     width: 300px;
+//  }
+// }
+

@@ -1,0 +1,51 @@
+<% if visa_info %>
+
+  <p class="warning"><%= visa_info[:visa_required] %></p>
+
+  <strong>How long am I allowed to stay?</strong>
+
+    <% if visa_info[:allowed_stay] == nil %>
+       <p>Depends on your visa requirements.</p>
+    <% else %>
+      <p><%= visa_info[:allowed_stay] %></p>
+    <% end %>
+
+  <strong>What visa options do I have?</strong>
+  <p><%= visa_info[:info1] %> <%= visa_info[:info2] %></p>
+
+
+  <h3 style="margin-top: 20px">Passport</h3>
+  <strong>How many blank pages do I need?</strong>
+  <p><%= visa_info[:blank_pages] %></p>
+
+  <strong>How long must my passport be valid?</strong>
+  <p><%= visa_info[:valid] %></p>
+
+  <h3 style="margin-top: 20px">Vaccination</h3>
+
+  <strong>Which vaccinations should I get?</strong>
+    <% if visa_info[:risk_vaccination] == nil %>
+    <p>No vaccination are needed.</p>
+    <% else %>
+    <% visa_info[:risk_vaccination].each do |risk| %>
+    <p><%= risk["type"].gsub("_", " ").capitalize %></p>
+    <% end %>
+  <% end %>
+
+  <strong>Which vaccinations are recomended?</strong>
+    <% if visa_info[:recom_vaccination] == nil %>
+    <p>No vaccination are recomended.</p>
+    <% else %>
+    <% visa_info[:recom_vaccination].each do |recom| %>
+    <p><%= recom["type"].gsub("_", " ").capitalize %></p>
+    <% end %>
+  <% end %>
+  <h3 style="margin-top: 20px">Currency</h3>
+
+  <strong>Is there a restriction on bringing cash on arrival?</strong>
+  <p><%= visa_info[:currency_arrival] %></p>
+
+  <strong>Is there a restriction on taking cash when leaving?</strong>
+  <p><%= visa_info[:currency_exit] %></p>
+
+<% end %>
