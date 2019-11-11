@@ -2,18 +2,21 @@
   <a class="navbar-brand" href="/">
     <%= image_tag 'trvlr-logo.svg'%>
   </a>
+
     <button class="" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-bars" style="color:black; font-size:28px;">
       </i>
     </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item nav-item-navbar active">
         <%= link_to 'About us', about_path, class:'nav-box-link'%>
       </li>
+
       <% if user_signed_in? %>
-      <li class="nav-box">
-        <div class="d-flex">
+        <li class="nav-item nav-item-navbar">
+          <div class="d-flex">
           <% if current_user.facebook_picture_url %>
           <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% elsif current_user.photo %>
@@ -21,7 +24,7 @@
           <% else %>
           <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% end %>
-          <%= link_to "Profile", profile_path(current_user), class: "nav-box-link"%>
+          <%= link_to "Profile", profile_path(current_user), class:'nav-box-link' %>
         </div>
       </li>
       <li class="nav-item nav-item-navbar">
