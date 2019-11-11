@@ -213,3 +213,22 @@ french_words.each do |word|
     translation: word[:translation]
   )
 end
+
+# CULTURE
+# chinese_culture = Culture.new(country: Country.where(name: 'China').first)
+
+
+# chinese_words = [
+#   {paragraph1: 'Swan into China without making a few adjustments to your cultural radar and you’re setting yourself up for a fall. You’ll want to buy one or two absolute essentials before you head out, too. And then there’s the visa – do not forget the visa.',
+
+
+
+
+# chinese_culture.each do |paragraph|
+#   Culture.create!(
+#     paragraph1: malay_vocab,
+#     english: word[:english],
+#     translation: word[:translation]
+#   )
+# end
+

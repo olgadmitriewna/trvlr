@@ -1,23 +1,23 @@
 <!-- <div class="countries-list">
   <div class="d-flex flex-wrap">
-    <% @countries.where(region: continent_adj).each do |country| %>
+    <#% @countries.where(region: continent_adj).each do |country| %>
           <div class="country-card">
-            <%= link_to country_path(country) do %>
-              <p><%= country.name %></p>
-              <%= image_tag country.photo, class: "country-photo" %>
-            <% end %>
+            <%#= link_to country_path(country) do %>
+              <p><%#= country.name %></p>
+              <%#= image_tag country.photo, class: "country-photo" %>
+            <%# end %>
           </div>
-    <% end %>
+    <%# end %>
   </div>
 </div>
  -->
 
 <div class="countries-list">
-  <div class="d-flex flex-wrap justify-content-center">
+  <div class="d-flex flex-wrap justify-content">
     <% @countries.where(region: continent_adj).each do |country| %>
         <%= link_to country_path(country) do %>
           <div class="country-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path country.photo %>)">
-            <p><%= country.name %></p>
+            <h2><%= country.name %></h2>
           </div>
         <% end %>
     <% end %>
