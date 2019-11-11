@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact', as: 'contact'
   get 'profile/:id', to: 'pages#profile', as: 'profile'
   post 'phrases/:id/user_phrases', to: "user_phrases#create", as: :new_user_phrase
+  post 'countries/:id/visits', to: "visits#create", as: :country_visits
 
 end
 
