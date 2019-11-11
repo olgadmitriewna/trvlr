@@ -6,6 +6,7 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:facebook]
   mount_uploader :photo, PhotoUploader
   has_many :user_phrases
+  has_many :user_places
   has_many :phrases, through: :user_phrases
 
   def self.find_for_facebook_oauth(auth)

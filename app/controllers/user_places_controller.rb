@@ -2,7 +2,7 @@ class UserPlacesController < ApplicationController
    def create
     @user_place = UserPlace.new
     @user_place.user = current_user
-    place = Place.find(params[:id])
+    place = Place.find(params[:place])
     @user_place.place = place
     if @user_place.save!
       redirect_to profile_path(current_user)
