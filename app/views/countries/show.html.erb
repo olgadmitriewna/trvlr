@@ -1,9 +1,11 @@
 <div class='country-show'>
-  <h1 class='country-name'><%= @country.name %></h1>
-  <%= image_tag @country.photo, class:'show-banner' %>
+  <div class="country-banner d-flex flex-wrap justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('<%= cl_image_path @country.photo, crop: :fill %>'); background-size: cover; ">
+    <%#= image_tag @country.photo, class:'show-banner' %>
+    <h1 class='country-name'><%= @country.name %></h1>
+  </div>
 </div>
 
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<ul class="nav nav-pills-show mb-3" id="country-show-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-culture-tab" data-toggle="pill" href="#pills-culture" role="tab" aria-controls="pills-culture" aria-selected="true">Culture</a>
   </li>
