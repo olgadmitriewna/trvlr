@@ -8,10 +8,11 @@ require 'csv'
 #USERS
 
 # puts 'creating users'
-# Phrase.destroy_all
-# Vocabulary.destroy_all
-# User.destroy_all
-# Country.destroy_all
+Phrase.destroy_all
+Vocabulary.destroy_all
+User.destroy_all
+Country.destroy_all
+
 # user = User.new(first_name: 'Olga', email: 'olga@gmail.com', password: "password")
 # user.save!
 
