@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'user_place/create'
   get 'user_phrases/create'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

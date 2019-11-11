@@ -8,5 +8,9 @@
   data-marker="<%= @marker.to_json %>"
 ></div>
 
+ <div class='add'>
+      <%= link_to "+", new_user_phrase_path(phrase), method: :post %>
+</div>
+
 
 
