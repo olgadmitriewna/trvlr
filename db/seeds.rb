@@ -81,10 +81,10 @@ countries_list = {
  countries_list.each do |country_name, url|
    response = RestClient.get "https://restcountries.eu/rest/v2/name/#{country_name}"
    data = JSON.parse(response)
-
    country = Country.new(
      name: data.first["name"],
      photo: url,
+     code: data.first["alpha3Code"],
      region: data.first["region"],
      language: data.first["languages"][0]["iso639_1"]
    )
