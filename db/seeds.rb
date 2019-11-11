@@ -88,6 +88,8 @@ countries_list = {
       name = "Great Britain"
       when "Iran (Islamic Republic of)"
       name = "Iran"
+      when "Russian Federation"
+      name = "Russia"
       else
       name = data.first["name"]
     end
