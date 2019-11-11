@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'user_places/create'
   get 'user_phrases/create'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
 
   root to: 'countries#index'
   resources :countries, only: [:index, :show]
+  resources :user_places, only: [:create]
   get 'about', to: 'pages#about', as: 'about'
   get 'contact', to: 'pages#contact', as: 'contact'
   get 'profile/:id', to: 'pages#profile', as: 'profile'

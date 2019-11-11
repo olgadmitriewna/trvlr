@@ -1,4 +1,13 @@
-<h1 style ="font-size: 15px;"><%= place.name %></h1>
-<img class="place-img" style="height: 200px; width: 200px;" src="<%= place.photo%>" >
+<div class="info-window">
+<div class="d-flex">
+  <h1 style =""><%= place.name %></h1>
+<div class='add'>
+    <%= link_to "+", user_places_path(place), method: :post %>
+</div>
+</div>
+
+<img class="place-img" src="<%= place.photo%>" >
 <p><b>City:</b> <%= place.city %></p>
-<p class="btn btn-flat"><%= link_to 'More info', place.link %></p>
+<%= link_to 'More info', place.link, class: "btn btn-flat btn-primary" %>
+
+</div>
