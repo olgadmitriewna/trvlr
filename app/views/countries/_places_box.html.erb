@@ -2,10 +2,12 @@
 <div class="d-flex">
   <h1 style =""><%= place.name %></h1>
 <div class='add'>
-  <%= form_tag user_places_path do |f| %>
-    <%= hidden_field_tag :place, place.id %>
-    <%= submit_tag "add" %>
+  <!-- <span><%= place.id %></span> -->
+  <%= simple_form_for UserPlace.new do |f| %>
+    <%= f.input :place, as: :hidden, input_html: { value: place.id } %>
+    <%= f.submit 'add' %>
   <% end %>
+
     <%#= link_to "+", user_places_path(place), method: :post %>
 </div>
 </div>
