@@ -7,6 +7,10 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   has_many :user_phrases
   has_many :user_places
+  has_many :user_visas
+  has_many :interests
+  has_many :countries, through: :interests
+
   has_many :phrases, through: :user_phrases
 
   def self.find_for_facebook_oauth(auth)
@@ -28,5 +32,9 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  def likes_the_country(country)
+    Interest.where(user: self, country: country).any?
   end
 end

@@ -24,24 +24,46 @@
   <p><%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-primary"%></p>
 <% end %>
 
-<h2>My Countries:</h2>
+<h2>Travel Interests</h2>
 
-<div class="country-card col-6">
-    <p><%= @country.name %></p>
-    <img class="country-photo"><%= image_tag @country.photo %></img>
+<div class="row">
+  <% @countries.each do |country| %>
+    <div class="col-6">
+  <div class="country-card-profile" style='background-image: url("<%= country.photo %>")'>
+    <a rel="stylesheet" href="/profile/<%= @user.id %>?country=<%= country.id %>">
+    <p><%= country.name %></p>
+  </a>
+  </div>
 </div>
 
-<!-- <div class="phrases m-6">
+  <% end %>
+</div>
+
+<h1>Tesssssst</h1>
+<% @places.each do |user_place| %>
+  <%= user_place.place.name %>
+<% end %>
+
+<div class="phrases m-6">
   <h2>My Vocabularies:</h2>
   <ul>
-    <#% @user.phrases.each do |phrase| %>
+    <% @phrases.each do |phrase| %>
       <li>
-        <#%= phrase.english %> : <#%= phrase.translation %>
+        <%= phrase.english %> : <%= phrase.translation %>
       </li>
-    <#% end %>
+    <% end %>
 </ul>
 </div>
- -->
+
+<div>
+  <h2>Previous trvlr destinations</h2>
+    <p>add places you’ve traveled to, so trvlrs can connect with you and ask questions about it</p>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  +
+</button>
+</div>
+
+
  <div>
   <p><%= link_to "Back", countries_path, class: "btn btn-primary"%></p>
 </div>
