@@ -1,4 +1,3 @@
-
 <p>Find out if you need a visa for <%= @country.name %>. Choose your citizenship and get information about passport requirements, allowed stay and duration of your visit.</p>
   <%= form_tag visa_info_path, method: :get, remote: true, class: "visa-from" do |f| %>
   <%= hidden_field_tag 'country_id', @country.id %>
