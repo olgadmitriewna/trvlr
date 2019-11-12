@@ -4,7 +4,7 @@
   <%= hidden_field_tag 'country_id', @country.id %>
     <select name="citizen_country" class="visa-form" style="background-color: #F4F4F4;/*  */padding: 9px 29px;/* display: -webkit-inline-box; *//* FONT-VARIANT: JIS83; *//* align-items: center; */border-color: transparent;">>
     <option value="" disabled selected>Choose your citizenship</option>
-    <% Country.all.each do |country| %>
+    <% Country.order(name: :ASC).each do |country| %>
       <option  value="<%= country.code %>"><%= country.name %></option>
     <% end %>
   </select>
