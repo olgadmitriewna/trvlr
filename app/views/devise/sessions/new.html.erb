@@ -1,6 +1,5 @@
 <div class="log-in">
   <h2>Log in</h2>
-
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="form-content">
@@ -18,12 +17,10 @@
     <div class="form-actions btn-primary">
       <%= f.button :submit, "Log in" %>
     </div>
+  <%= render "devise/shared/links" %>
   </div>
   <% end %>
 </div>
 
 <%#= link_to 'Login with Facebook', user_facebook_omniauth_authorize_path %>
 
-<div class="log-in-sign-up">
-  <%= render "devise/shared/links" %>
-</div>
