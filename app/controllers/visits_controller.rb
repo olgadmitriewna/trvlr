@@ -3,7 +3,7 @@ class VisitsController < ApplicationController
   end
 
   def create
-    @visit = Visit.new
+    @visit = Visit.new(visit_params)
     @visit.user = current_user
     @country = Country.find(params[:country_id])
     @visit.country = @country
@@ -12,5 +12,9 @@ class VisitsController < ApplicationController
     else
       render profile_path
     end
+  end
+
+  def visit_params
+    params.require(:visits).permit(:longitude, :latitude)
   end
 end

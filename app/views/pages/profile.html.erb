@@ -1,7 +1,15 @@
-<div class="container mt-6">
-  <div class="d-flex flex-column bd-highlight mb-2">
-    <div class="p-2 m-6 bd-highlight text-center">
-      <img class="avatar-large mt-6" alt="avatar-large" src="<%= @user.photo %>">
+<div class="container mr-6 ml-6">
+  <div class="container mt-6">
+    <div class="d-flex flex-column bd-highlight mb-2">
+      <div class="p-2 m-6 bd-highlight text-center">
+          <% if current_user.facebook_picture_url %>
+          <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% elsif current_user.photo %>
+          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% else %>
+          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
+      </div>
     </div>
   </div>
 
@@ -9,22 +17,6 @@
     <h2 class="card-description text-center">Hello, I'm <%=@user.first_name%></h2>
   </div>
 
-  <div class="container my-5">
-    <p>Name: <%= @user.first_name %> <%= @user.last_name %></p>
-    <p>Bio: <%= @user.bio %></p>
-    <p>Interested in traveling to: <%= @user.travel_interests %></p>
-    <p>Has traveled to:</p>
-    <% if @user.visits.any? %>
-      <ul>
-        <% @countries_visited.each do |c| %>
-          <li><%= c.name %></li>
-        <% end %>
-      </ul>
-    <% end %>
-
-    <% if @user == current_user %>
-      <p><%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-primary"%></p>
-    <% end %>
 
   <h2 id="trtarget">Travel Interests</h2>
 
@@ -38,18 +30,18 @@
           </div>
         </div>
       <% end %>
-   </div>
+    </div>
 
   <% if @country %>
+
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link" id="pills-vocabulary-tab" data-toggle="pill" href="#pills-vocabulary" role="tab" aria-controls="pills-vocabulary" aria-selected="false">Vocabulary</a>
+        <a class="nav-link" id="pills-vocabulary-tab" data-toggle="pill" href="#pills-vocabulary" role="tab" aria-controls="pills-vocabulary" aria-selected="true">Vocabulary</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="pills-places-tab" data-toggle="pill" href="#pills-places" role="tab" aria-controls="pills-places" aria-selected="false">Places</a>
+        <a class="nav-link" id="pills-places-tab" data-toggle="pill" href="#pills-places" role="tab" aria-controls="pills-places" aria-selected="true">Places</a>
       </li>
     </ul>
-
 
     <div class="tab-pane fade" id="pills-vocabulary" role="tabpanel" aria-labelledby="pills-vocabulary-tab">
       <ul>
@@ -68,12 +60,11 @@
       </ul>
     </div>
 
-
     <div class="tab-pane fade" id="pills-places" role="tabpanel" aria-labelledby="pills-places-tab">
       <div class="row justify-content-around">
         <% @places.each do |user_place| %>
           <div class="info-window col-xs-6">
-            <div class="d-flex">
+            <div class="d-flex" style='flex-direction: column;'>
               <h1><%= user_place.place.name %></h1>
               <img class="place-img" src="<%= user_place.place.photo%>" >
               <p><b>City:</b> <%= user_place.place.city %></p>
@@ -90,16 +81,23 @@
     <h2>Previous trvlr destinations</h2>
     <p>Add places you’ve traveled to, so trvlrs can connect with you and ask questions about it</p>
       <%= form_tag visits_path, method: :post, class: "country-list" do |f| %>
-          <h2>Which country you been to?</h2>
+        <p><strong>Which country you been to?</strong></p>
           <%= select_tag 'country_id', options_for_select(Country.all.collect{ |c| [c.name, c.id] }) %>
-        <%= submit_tag "Submit", class: "btn btn-primary"  %>
+          <%= hidden_field :visits, :latitude %>
+          <%= hidden_field :visits, :longitude %>
+          <%= submit_tag "Submit", class: "btn btn-primary"  %>
       <% end %>
   </div>
 
-  <div>
-    <p><%= link_to "Back", countries_path, class: "btn btn-primary"%></p>
-  </div>
+
+  <p><strong><%=@user.first_name%> has traveled to:</strong></p>
+    <% if @user.visits.any? %>
+      <ul>
+        <% @countries_visited.each do |c| %>
+          <li><%= c.name %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
 </div>
-
 

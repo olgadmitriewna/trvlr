@@ -89,7 +89,9 @@
 }
 
 
-
+.fade:not(.show) {
+    display: none;
+}
 
 
 
