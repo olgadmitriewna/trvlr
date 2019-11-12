@@ -1,9 +1,13 @@
 .banner {
-    background-size: cover;
-    height: 458px;
-    margin-top: -52px;
-    display: -webkit-box;
-    -webkit-box-align: end;
+  background-size: cover;
+  background-position: center;
+  height: 475px;
+  margin-top: -60px;
+  width: 100%;
+  background-attachment: inherit;
+  display: flex;
+  position: relative;
+  align-items: flex-end;
 }
 
 .banner h1 {
@@ -19,16 +23,11 @@
   // text-align: center;
 }
 
-.banner h2 {
+.banner p {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-#header-text {
-  padding-right: 16px;
-  padding-left: 16px;
 }
 
 @media screen and (min-width: 480px) {
@@ -36,6 +35,7 @@
     height: 475px;
  }
 }
+
 
 // .info-section i {
 //   border: solid black;
