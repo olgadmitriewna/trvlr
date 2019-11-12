@@ -44,8 +44,8 @@ class CountriesController < ApplicationController
   end
 
   def place
+    @country = Country.find(params[:id])
     @places = Place.geocoded # returns places with coordinates
-
     @markers = @places.map do |place|
       {
         lat: place.latitude,
