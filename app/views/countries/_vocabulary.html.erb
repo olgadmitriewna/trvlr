@@ -1,8 +1,8 @@
-<h2>Handy Phrases you may need in <%=@country.name  %></h2>
+<p>Handy Phrases you may need in <%=@country.name%>.</p>
   <div class='phrases'>
     <% @phrases.each do |phrase| %>
       <div class='english'>
-        <p> <%= phrase.english %> : </p>
+        <p> <%= phrase.english %> </p>
       </div>
         <div class='translated'>
           <%= phrase.translation %>
@@ -12,3 +12,4 @@
           </div>
       <% end %>
   </div>
+<p>Click on the plus to add them to your profile.</p>
