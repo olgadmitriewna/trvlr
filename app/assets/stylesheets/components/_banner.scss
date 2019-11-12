@@ -1,13 +1,9 @@
 .banner {
-  background-size: cover;
-  background-position: center;
-  height: 475px;
-  margin-top: -60px;
-  width: 100%;
-  background-attachment: inherit;
-  display: flex;
-  position: relative;
-  align-items: flex-end;
+    background-size: cover;
+    height: 458px;
+    margin-top: -52px;
+    display: -webkit-box;
+    -webkit-box-align: end;
 }
 
 .banner h1 {
@@ -23,7 +19,7 @@
   // text-align: center;
 }
 
-.banner p {
+.banner h2 {
   font-size: 20px;
   color: white;
   opacity: .7;
@@ -53,4 +49,5 @@
 //   transform: rotate(-45deg);
 //   -webkit-transform: rotate(-45deg);
 // }
+
 
