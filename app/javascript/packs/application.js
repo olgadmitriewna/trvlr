@@ -1,7 +1,8 @@
 import "bootstrap";
 import { initMap } from '../plugins/init_map';
-
+import { navbarToggler } from '../components/navbar';
 initMap()
+
 document.addEventListener('DOMContentLoaded', () => {
   navigator.geolocation.getCurrentPosition((position) => {
     const latitudeVisits = document.querySelector('#visits_latitude');
@@ -11,3 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     longitudeVisits.value = position.coords.longitude;
   })
 })
+
+navbarToggler()
+
