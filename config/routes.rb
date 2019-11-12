@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   #   resources :interests, only: [:new, :create, :destroy]
   #   resources :visits, only: [:new, :create]
   #end
-
+  resources :visits, only: :create
   root to: 'countries#index'
   resources :countries, only: [:index, :show]
   resources :user_places, only: [:create]

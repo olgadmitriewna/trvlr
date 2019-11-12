@@ -56,3 +56,11 @@
 
   </div>
 </div>
+
+<div class="connect-travelers">
+  <ol>
+    <% @users_visited.each do |u| %>
+      <li><%= image_tag u.facebook_picture_url %></li>
+    <% end %>
+  </ol>
+</div>
