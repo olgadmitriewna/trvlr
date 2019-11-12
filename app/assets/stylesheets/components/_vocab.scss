@@ -3,12 +3,14 @@
   grid-template-columns: auto auto auto;
   grid-gap: 5px;
   margin: 5px;
+
 }
 
 .english{
   // align-self: center;
   background-color: #EFECEC;
   padding: 8px 12px;
+  border-radius: 4px;
   p {
     margin-bottom: 0;
   }
@@ -16,7 +18,8 @@
 
 .translated{
   background-color: #FFD364;
-    padding: 8px 12px;
+  padding: 8px 12px;
+  border-radius: 4px;
   p {
     margin-bottom: 0;
   }

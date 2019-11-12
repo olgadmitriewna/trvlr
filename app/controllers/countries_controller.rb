@@ -16,7 +16,7 @@ class CountriesController < ApplicationController
       {
         lat: place.latitude,
         lng: place.longitude,
-        infoWindow: { content: render_to_string(partial: "/countries/map_box", locals: { place: place }) }
+        infoWindow: { content: render_to_string(partial: "/countries/places_box", locals: { place: place }) }
         # Uncomment the above line if you want each of your markers to display a info window when clicked
         # (you will also need to create the partial "/flats/map_box")
       }
@@ -83,8 +83,8 @@ class CountriesController < ApplicationController
     info2 = datas["visa"].first["textual"]["text"][2] # "An eVisa is delivered electronically, and can be obtained online before your trip to Vietnam."
 
     # passport
-    blank_pages = datas["passport"]["textual"]["blank_pages"]["text"][1] # Your passport must have one blank page.
-    valid = datas["passport"]["textual"]["passport_validity"]["text"][1] # Your passport must be valid for six months at the time you enter Vietnam."
+    blank_pages = nil #= datas["passport"]["textual"]["blank_pages"]["text"][1] # Your passport must have one blank page.
+    valid = nil #= datas["passport"]["textual"]["passport_validity"]["text"][1] # Your passport must be valid for six months at the time you enter Vietnam."
 
     # vaccination
 

@@ -25,6 +25,19 @@
   // background-image: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.8));
 }
 
+.country-card-profile{
+  height:100px;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p{
+    color: white;
+    font-size: 24px
+  }
+}
+
 .country-card {
   p {
     margin-bottom: 0px;
@@ -40,7 +53,7 @@
   color: white;
   font-size: 24px;
   font-weight: bold;
-  border-radius: 6px;
+  // border-radius: 6px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 4px;

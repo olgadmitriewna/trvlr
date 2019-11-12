@@ -1,5 +1,5 @@
 <h2>Visa requirements</h2>
-<p>Find out if you need a visa for <%= @country.name %>. Choose your citizenship and get information about passport requirements, allowed stay and duration of your visit.</p>
+<p>Find out if you need a visa for <%#= @country.name %>. Choose your citizenship and get information about passport requirements, allowed stay and duration of your visit.</p>
   <%= form_tag visa_info_path, method: :get, remote: true, class: "visa-from" do |f| %>
   <%= hidden_field_tag 'country_id', @country.id %>
     <select name="citizen_country" style="background-color: #F4F4F4">
@@ -12,5 +12,5 @@
   <% end %>
 
 <div id="visa-info-container">
-  <%= render 'visa_informations', visa_info: @visa_info %>
+  <%= render 'countries/visa_informations', visa_info: @visa_info %>
 </div>
