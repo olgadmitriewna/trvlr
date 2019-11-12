@@ -61,6 +61,9 @@ class CountriesController < ApplicationController
     # passport
     blank_pages = datas["passport"]["textual"]["blank_pages"]["text"][1] # Your passport must have one blank page.
     valid = datas["passport"]["textual"]["passport_validity"]["text"][1] # Your passport must be valid for six months at the time you enter Vietnam."
+
+    # vaccination
+
     # currency
     currency_arrival = datas["currency"]["arrival"]
     currency_exit = datas["currency"]["exit"]
