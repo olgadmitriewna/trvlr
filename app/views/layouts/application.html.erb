@@ -12,10 +12,13 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
+  <div class="yield-content">
     <%= yield %>
-    <%= render 'shared/footer' %>
+  </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render 'shared/footer' %>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_KEY']}" %>
 

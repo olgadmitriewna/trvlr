@@ -16,7 +16,7 @@ class CountriesController < ApplicationController
       {
         lat: place.latitude,
         lng: place.longitude,
-        infoWindow: { content: render_to_string(partial: "/countries/map_box", locals: { place: place }) }
+        infoWindow: { content: render_to_string(partial: "/countries/places_box", locals: { place: place }) }
       }
     end
     @phrases = @country.vocabularies[0] ? @country.vocabularies[0].phrases : []
