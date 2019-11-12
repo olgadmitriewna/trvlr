@@ -1,41 +1,86 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<!--Navbar-->
+<nav class="navbar navbar-light amber lighten-4 mb-6">
+
   <a class="navbar-brand" href="/">
     <%= image_tag 'trvlr-logo.svg'%>
   </a>
+  <!-- Collapse button -->
+  <button class="navbar-toggler first-button" style="outline: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+    aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="animated-icon1">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse
+   <%= 'navbar-mb' if params[:controller] == 'countries' &&  params[:action] == 'index'
+ %>" id="navbarSupportedContent20">
+    <!-- Links -->
 
-    <button class="" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <ul class="navbar-nav mt-3">
+      <li class="nav-item" style="color: black">
+        <%= link_to 'About us', about_path, class:'nav-link'%>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to "Profile", profile_path(current_user), class:'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'nav-link' %>
+      </li>
+      <% else %>
+      <li class="nav-item">
+        <%= link_to 'Login', new_user_session_path, class:'nav-link' %>
+      </li>
+    </ul>
+    <% end %>
+    <!-- Links -->
+
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+
+
+<!--/OLD NAVBAR-->
+<!--     <button class="" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <i class="fas fa-bars" style="color:black; font-size:28px;">
       </i>
     </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto" style="background-color: #FFD364">
       <li class="nav-item nav-item-navbar active">
-        <%= link_to 'About us', about_path, class:'nav-box-link'%>
+        <%#= link_to 'About us', about_path, class:'nav-box-link'%>
       </li>
 
-      <% if user_signed_in? %>
+      <#% if user_signed_in? %>
         <li class="nav-item nav-item-navbar">
-          <div class="d-flex">
-          <% if current_user.facebook_picture_url %>
-          <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% elsif current_user.photo %>
-          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% else %>
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% end %>
-          <%= link_to "Profile", profile_path(current_user), class:'nav-box-link' %>
+          <div class="d-flex"> -->
+          <!-- <#% if current_user.facebook_picture_url %>
+          <%#= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <#% elsif current_user.photo %>
+          <%#= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <#% else %>
+          <%#= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <# end %> -->
+<!--           <%#= link_to "Profile", profile_path(current_user), class:'nav-box-link' %>
         </div>
       </li>
+
       <li class="nav-item nav-item-navbar">
-        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'nav-box-link' %>
+        <%#= link_to 'Logout', destroy_user_session_path, method: :delete, class:'nav-box-link' %>
       </li>
-      <% else %>
+      <#% else %>
+
       <li class="nav-item nav-item-navbar">
-        <%= link_to 'Login', new_user_session_path, class:'nav-box-link' %>
+        <#%= link_to 'Login', new_user_session_path, class:'nav-box-link' %>
       </li>
-      <% end %>
+
+      <%# end %>
     </li>
     </ul>
   </div>
-</div>
+</div> -->
