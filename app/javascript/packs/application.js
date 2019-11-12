@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const latitudeVisits = document.querySelector('#visits_latitude');
     const longitudeVisits = document.querySelector('#visits_longitude');
 
-    latitudeVisits.value = position.coords.latitude;
-    longitudeVisits.value = position.coords.longitude;
+    if (latitudeVisits && longitudeVisits) {
+      latitudeVisits.value = position.coords.latitude;
+      longitudeVisits.value = position.coords.longitude;
+    }
   })
 })
 
