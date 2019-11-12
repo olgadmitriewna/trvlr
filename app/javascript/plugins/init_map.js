@@ -28,13 +28,14 @@ const initMap = () => {
             position: new google.maps.LatLng(marker.lat, marker.lng),
             map: map,
             icon: marker.user_photo
+            // scaledSize: new google.maps.Size(20, 20),
           })
           return marker;
         })
         map.addMarkers(gMapMarkers);
         map.setCenter(markers[0].lat, markers[0].lng);
       }
-      map.setZoom(4)
+      map.setZoom(2)
     }
   }
 }
