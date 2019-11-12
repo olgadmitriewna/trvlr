@@ -9,5 +9,5 @@ class UserVisasController < ApplicationController
   #   else
   #     render "countries/index"
   #   end
-  # end
+  end
 end
