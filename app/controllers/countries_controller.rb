@@ -9,6 +9,7 @@ class CountriesController < ApplicationController
 
   def show
     @country = Country.find(params[:id])
+    @users_visited = User.joins(:visits).where(visits: { country_id: @country.id }).uniq
     @photo = @country.photo
     @places = @country.places
     @marker = { lat: @country.latitude, lng: @country.longitude }

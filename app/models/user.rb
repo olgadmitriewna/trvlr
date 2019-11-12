@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :user_places
   has_many :user_visas
   has_many :interests
+  has_many :visits
+  # allows us to write user.visits
   has_many :countries, through: :interests
 
   has_many :phrases, through: :user_phrases

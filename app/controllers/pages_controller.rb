@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
+    @countries_visited = @user.visits.distinct.pluck(:country_id).map { |id| Country.find(id) }
     @countries = @user.countries
     @places = []
     @phrases = []
