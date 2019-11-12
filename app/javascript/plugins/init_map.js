@@ -9,10 +9,10 @@ const initMap = () => {
     map.addMarkers(markers);
     mapElement.style.height = "900px"
     mapElement.style.width = "900px"
-    console.log(markers.length)
     if (markers.length === 0) {
       map.setZoom(2);
     } else if (markers.length === 1) {
+      console.log('haha')
       map.setCenter(markers[0].lat, markers[0].lng);
       map.setZoom(14);
     } else {

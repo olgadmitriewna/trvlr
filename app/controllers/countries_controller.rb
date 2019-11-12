@@ -5,6 +5,13 @@ class CountriesController < ApplicationController
   def index
     @users = User.all
     @countries = Country.all
+    @visits = Visit.all
+    @markers = @visits.map do |visit|
+      {
+        lat: visit.latitude,
+        lng: visit.longitude
+      }
+    end
   end
 
   def show
