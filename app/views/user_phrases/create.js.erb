@@ -1,0 +1,13 @@
+function refreshForm(innerHTML) {
+ const newPhraseForm =  document.getElementById('new_phrase');
+  newPhraseForm.innerHTML = innerHTML;
+}
+
+function addPhrase(phraseHTML) {
+  const phrases = document.getElementById('phrases');
+  phrases.insertAdjacentHTML('beforeend', phraseHTML);
+}
+
+addedPhrase = document.querySelector("#added")
+statusDiv = document.querySelector("[data-phrase='<%= @user_phrase.phrase.id %>']")
+statusDiv.innerText = addedPhrase.innerText
