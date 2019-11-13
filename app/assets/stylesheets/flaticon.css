@@ -3,7 +3,7 @@
   	Creation date: 22/01/2018 09:50
   	*/
 
-@font-face {
+/*@font-face {
   font-family: "Flaticon";
   src: url("./Flaticon.eot");
   src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
@@ -22,7 +22,7 @@
 }
 
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
   font-family: Flaticon;
         font-size: 20px;
 font-style: normal;
@@ -64,4 +64,4 @@ margin-left: 20px;
 .flaticon-033-island:before { content: "\f120"; }
 .flaticon-034-beach:before { content: "\f121"; }
 .flaticon-035-around:before { content: "\f122"; }
-.flaticon-036-plane:before { content: "\f123"; }
+.flaticon-036-plane:before { content: "\f123"; }*/

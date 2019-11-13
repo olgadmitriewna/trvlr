@@ -10,8 +10,8 @@ class CountriesController < ApplicationController
       {
         lat: visit.latitude,
         lng: visit.longitude,
-        user_photo: visit.user.facebook_picture_url || visit.user.photo,
-        infoWindow: { content: render_to_string(partial: "/countries/user_box", locals: {visit: visit}) }
+        infoWindow: { content: render_to_string(partial: "/countries/user_box", locals: { visit: visit }) }
+
       }
     end
   end

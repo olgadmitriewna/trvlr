@@ -1,7 +1,7 @@
 import "bootstrap";
 import { initMap } from '../plugins/init_map';
 import { navbarToggler } from '../components/navbar';
-// initMap()
+initMap()
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   navigator.geolocation.getCurrentPosition((position) => {
@@ -17,5 +17,3 @@ import { navbarToggler } from '../components/navbar';
 
 navbarToggler()
 
-const markersImage = document.querySelectorAll('#map img');
-console.log(markersImage);
