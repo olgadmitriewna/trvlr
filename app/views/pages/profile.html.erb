@@ -18,19 +18,21 @@
   </div>
 
 
-  <h2 id="trtarget">Travel Interests</h2>
+  <h2 id="trtarget">I'm interested in traveling to</h2>
 
-    <div class="row">
-      <% @countries.each do |country| %>
-        <div class="col-6">
-          <div class="country-card-profile" style='background-image: url("<%= country.photo %>")'>
-            <a rel="stylesheet" href="/profile/<%= @user.id %>?country=<%= country.id %>#trtarget">
-              <p><%= country.name %></p>
-             </a>
+
+<div class="countries-list">
+  <div class="d-flex flex-wrap justify-content">
+    <% @countries.each do |country| %>
+        <%= link_to country_path(country) do %>
+          <div class="country-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path country.photo %>)">
+            <h2><%= country.name %></h2>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>
+
 
   <% if @country %>
 
@@ -83,8 +85,6 @@
       <%= form_tag visits_path, method: :post, class: "country-list" do |f| %>
         <p><strong>Which country you been to?</strong></p>
           <%= select_tag 'country_id', options_for_select(Country.all.collect{ |c| [c.name, c.id] }) %>
-          <%= hidden_field :visits, :latitude %>
-          <%= hidden_field :visits, :longitude %>
           <%= submit_tag "Submit", class: "btn btn-primary"  %>
       <% end %>
   </div>
