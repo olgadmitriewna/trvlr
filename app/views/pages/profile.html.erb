@@ -83,8 +83,6 @@
       <%= form_tag visits_path, method: :post, class: "country-list" do |f| %>
         <p><strong>Which country you been to?</strong></p>
           <%= select_tag 'country_id', options_for_select(Country.all.collect{ |c| [c.name, c.id] }) %>
-          <%= hidden_field :visits, :latitude %>
-          <%= hidden_field :visits, :longitude %>
           <%= submit_tag "Submit", class: "btn btn-primary"  %>
       <% end %>
   </div>

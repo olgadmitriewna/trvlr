@@ -4,8 +4,10 @@ const initMap = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map = new GMaps({ el: '#map', lat: 0, lng: 0 });
+
     const markers = JSON.parse(mapElement.dataset.markers);
     const marker = JSON.parse(mapElement.dataset.marker);
+    console.log(markers)
     mapElement.style.height = "900px"
     mapElement.style.width = "900px"
     if (markers.length === 0) {
@@ -22,16 +24,18 @@ const initMap = () => {
         map.addMarkers(markers);
         console.log('here')
       } else {
+
+        console.log("ss")
         map.setCenter(markers[0].lat, markers[0].lng);
-        const gMapMarkers = markers.map(marker => {
-          var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(marker.lat, marker.lng),
-            map: map,
-            icon: 'assets/ic_menu_36px.svg'
-          })
-          return marker;
-        })
-        map.addMarkers(gMapMarkers)
+        // const gMapMarkers = markers.map(marker => {
+        //   var marker = new google.maps.Marker({
+        //     position: new google.maps.LatLng(marker.lat, marker.lng),
+        //     // map: map,
+        //     icon: marker.user_photo
+        //   })
+        //   return marker;
+        // })
+        map.addMarkers(markers)
       }
       map.setZoom(4)
     }
