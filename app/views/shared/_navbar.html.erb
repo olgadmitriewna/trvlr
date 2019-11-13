@@ -5,7 +5,7 @@
     <%= image_tag 'trvlr-logo.svg'%>
   </a>
   <!-- Collapse button -->
-  <button class="navbar-toggler first-button" style="outline: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+  <button  href='#' class="navbar-toggler first-button" style="outline: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
     aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
     <div class="animated-icon1">
       <span></span>
@@ -31,6 +31,9 @@
           <%= link_to 'Logout', destroy_user_session_path, method: :delete, class:'nav-link' %>
         </li>
         <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign up', new_user_registration_path, class:'nav-link' %>
+        </li>
         <li class="nav-item">
           <%= link_to 'Login', new_user_session_path, class:'nav-link' %>
         </li>

@@ -1,0 +1,26 @@
+
+.alert {
+    position: sticky;
+    bottom: 16px;
+    right: 16px;
+    z-index: 1000;
+}
+
+.alert-info {
+    color: black;
+    background-color: $yellow;
+    border: none;
+    margin: 10px;
+}
+
+.alert-warning {
+    color: black;
+    background-color: $red;
+    border: none;
+    margin: 10px;
+}
+
+.close {
+  font-weight: 200;
+  text-shadow: none;
+}

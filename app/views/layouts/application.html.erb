@@ -16,8 +16,9 @@
   <div class="yield-content">
     <%= yield %>
   </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<!--     <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+    <%= render 'shared/flashes' %>
     <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
