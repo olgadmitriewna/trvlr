@@ -24,7 +24,7 @@
 <div class="countries-list">
   <div class="d-flex flex-wrap justify-content">
     <% @countries.each do |country| %>
-        <%= link_to country_path(country) do %>
+        <%= link_to profile_path(country: country) do %>
           <div class="country-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path country.photo %>)">
             <h2><%= country.name %></h2>
           </div>

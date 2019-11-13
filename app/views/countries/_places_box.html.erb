@@ -1,20 +1,16 @@
-<p>Explore places in <%= @country.name %></p>
-
 <div class="info-window">
   <div class="d-flex">
     <h1 style =""><%= place.name %></h1>
       <div class='add'>
        <%= simple_form_for UserPlace.new do |f| %>
         <%= f.input :place, as: :hidden, input_html: { value: place.id } %>
-         <%= f.submit 'add' %>
+         <%= f.submit 'add', class: "btn btn-flat btn-primary" %>
        <% end %>
-
-    <%#= link_to "+", user_places_path(place), method: :post %>
       </div>
   </div>
 
+  <label>City:<%= place.city %></label>
   <img class="place-img" src="<%= place.photo%>" >
-  <p><b>City:</b> <%= place.city %></p>
   <%= link_to 'More info', place.link, class: "btn btn-flat btn-primary" %>
 
 </div>
