@@ -1,6 +1,39 @@
 #country_id {
-    padding: 9px 12px;
-    background: $light-gray;
-    border: transparent;
-    margin-bottom: 10px;
+  padding: 9px 12px;
+  background: $light-gray;
+  border: transparent;
+  margin-bottom: 10px;
+}
+
+.profile-icons p {
+  margin-bottom: 8px;
+  font-size: 12px;
+
+}
+
+.avatar-large {
+  width: 100px;
+}
+
+#social {
+  display: flex;
+  justify-content: center;
+  p {
+    margin-right: 10px;
+  }
+}
+
+#email {
+  text-align: center;
+}
+
+.profile-info {
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 8px;
+}
+
+.country-list {
+    display: -webkit-box;
+    -webkit-box-pack: center;
 }

@@ -3,23 +3,51 @@
     <div class="d-flex flex-column bd-highlight mb-2">
       <div class="p-2 m-6 bd-highlight text-center">
           <% if current_user.facebook_picture_url %>
-          <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag current_user.facebook_picture_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% elsif current_user.photo %>
-          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= cl_image_tag current_user.photo, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% else %>
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "http://placehold.it/30x30", class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% end %>
       </div>
     </div>
   </div>
 
-  <div class="p-2 bd-highlight">
-    <h2 class="card-description text-center">Hello, I'm <%=@user.first_name%></h2>
+    <div class="profile-info">
+      <div class="bd-highlight mr-8 ml-8">
+        <h3 class="card-description text-center">Hello, I'm <%=@user.first_name%></h3>
+      </div>
+      <div class="profile-icons" id="social">
+      <p><i class="fab fa-instagram"></i> <%= @user.instagram_user_name %></p>
+      <p><i class="fab fa-facebook"></i> <%= @user.facebook_link %></p>
+      </div>
+      <div class="profile-icons" id="email">
+        <p><i class="far fa-envelope"></i> <%= @user.email %></p>
+      </div>
+  </div>
+
+  <div>
+    <h3>Previous trvlr destinations</h3>
+    <p>Add places you’ve traveled to, so trvlrs can connect with you and ask questions about it</p>
+      <%= form_tag visits_path, method: :post, class: "country-list" do |f| %>
+          <%= select_tag 'country_id', options_for_select(Country.all.collect{ |c| [c.name, c.id] }) %>
+          <%= hidden_field :visits, :latitude %>
+          <%= hidden_field :visits, :longitude %>
+          <%= submit_tag "Add", class: "btn btn-primary"  %>
+      <% end %>
   </div>
 
 
-  <h2 id="trtarget">I'm interested in traveling to</h2>
+  <p><strong><%=@user.first_name%> has traveled to:</strong></p>
+    <% if @user.visits.any? %>
+      <ul>
+        <% @countries_visited.each do |c| %>
+          <li><%= c.name %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
+<h3 id="trtarget">Interested in traveling to</h3>
 
 <div class="countries-list">
   <div class="d-flex flex-wrap justify-content">
@@ -78,28 +106,6 @@
     </div>
 
   <% end %>
-
-  <div>
-    <h2>Previous trvlr destinations</h2>
-    <p>Add places you’ve traveled to, so trvlrs can connect with you and ask questions about it</p>
-      <%= form_tag visits_path, method: :post, class: "country-list" do |f| %>
-        <p><strong>Which country you been to?</strong></p>
-          <%= select_tag 'country_id', options_for_select(Country.all.collect{ |c| [c.name, c.id] }) %>
-          <%= hidden_field :visits, :latitude %>
-          <%= hidden_field :visits, :longitude %>
-          <%= submit_tag "Submit", class: "btn btn-primary"  %>
-      <% end %>
-  </div>
-
-
-  <p><strong><%=@user.first_name%> has traveled to:</strong></p>
-    <% if @user.visits.any? %>
-      <ul>
-        <% @countries_visited.each do |c| %>
-          <li><%= c.name %></li>
-        <% end %>
-      </ul>
-    <% end %>
 
 </div>
 
