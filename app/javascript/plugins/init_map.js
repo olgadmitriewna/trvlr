@@ -6,7 +6,7 @@ const initMap = () => {
     map = new GMaps({ el: '#map', lat: 0, lng: 0 });
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    console.log()
+    console.log("major change on this code")
     const marker = JSON.parse(mapElement.dataset.marker);
     console.log(markers)
     mapElement.style.height = "900px"
