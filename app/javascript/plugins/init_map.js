@@ -1,7 +1,5 @@
 import GMaps from 'gmaps/gmaps.js';
-
 let map;
-
 const initMap = () => {
   const mapElement = document.getElementById('map');
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
@@ -22,22 +20,23 @@ const initMap = () => {
         map.setCenter(marker.lat, marker.lng);
         map.addMarkers(marker);
         map.addMarkers(markers);
+        console.log('here')
       } else {
         map.setCenter(markers[0].lat, markers[0].lng);
         const gMapMarkers = markers.map(marker => {
           var marker = new google.maps.Marker({
             position: new google.maps.LatLng(marker.lat, marker.lng),
             map: map,
-            icon: marker.user_photo
+            icon: 'assets/ic_menu_36px.svg'
           })
           return marker;
         })
-        map.addMarkers(gMapMarkers);
-        map.setZoom(2)
+        map.addMarkers(gMapMarkers)
       }
       map.setZoom(4)
     }
   }
+  // Set initial size of the map
 }
 
 export { initMap };

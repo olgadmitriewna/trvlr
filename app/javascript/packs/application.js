@@ -17,5 +17,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 navbarToggler()
 
-const markersImage = document.querySelectorAll('#map img');
-console.log(markersImage);
