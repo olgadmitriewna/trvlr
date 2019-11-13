@@ -1,13 +1,21 @@
+#profile-container {
+  padding: 15px;
+}
+
+.profile-chapters {
+  margin-top: 10px;
+}
+
 #country_id {
   padding: 9px 12px;
   background: $light-gray;
   border: transparent;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .profile-icons p {
   margin-bottom: 8px;
-  font-size: 12px;
+  font-size: 14px;
 
 }
 
@@ -36,4 +44,19 @@
 .country-list {
     display: -webkit-box;
     -webkit-box-pack: center;
+}
+
+#profile-country-card {
+  width: 342px;
+  height: 124px;
+}
+
+#bio {
+  margin-top: 8px;
+  padding: 8px;
+}
+
+#h4-profile {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
