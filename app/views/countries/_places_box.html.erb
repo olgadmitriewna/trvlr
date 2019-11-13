@@ -3,7 +3,7 @@
     <h1 style =""><%= place.name %></h1>
       <div class='add'>
        <%= simple_form_for UserPlace.new do |f| %>
-        <%= f.input :place, as: :hidden, input_html: { value: place.id } %>
+        <%= f.input :place, as: :hidden, input_html: { value: place.id }, remote: true %>
          <%= f.submit 'add', class: "btn btn-flat btn-primary" %>
        <% end %>
       </div>

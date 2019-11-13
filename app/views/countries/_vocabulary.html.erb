@@ -4,12 +4,29 @@
       <div class='english'>
         <p> <%= phrase.english %> </p>
       </div>
-        <div class='translated'>
-          <%= phrase.translation %>
+      <div class='translated'>
+        <%= phrase.translation %>
+      </div>
+      <div class="phrase-status" data-phrase="<%= phrase.id %>">
+
+      <% if UserPhrase.find_by(user: current_user.id, phrase_id: phrase.id) %>
+        <p id="added">added</p>
+      <% else %>
+        <div class='add-country'>
+         <%= simple_form_for UserPhrase.new, remote: true do |f| %>
+          <%= f.input :phrase, as: :hidden, input_html: { value: phrase.id } %>
+          <%= f.input :country, as: :hidden, input_html: { value: @country.id } %>
+          <%= f.submit 'add', class: "btn btn-flat btn-primary" %>
+         <% end %>
         </div>
-          <div class='add'>
-            <%= link_to "+", new_user_phrase_path(phrase), method: :post %>
-          </div>
       <% end %>
+
+      </div>
+    <% end %>
   </div>
-<p>Click on the plus to add them to your profile.</p>
+
+<!--           <div class='add'>
+            <#%= link_to "+", new_user_phrase_path(phrase), method: :post %>
+          </div> -->
+
+
