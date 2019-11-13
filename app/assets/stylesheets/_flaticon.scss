@@ -1,0 +1,111 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 22/01/2018 09:50
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-001-wallet:before { content: "\f100"; }
+.flaticon-002-trekking:before { content: "\f101"; }
+.flaticon-003-boarding-pass:before { content: "\f102"; }
+.flaticon-004-train:before { content: "\f103"; }
+.flaticon-005-binoculars:before { content: "\f104"; }
+.flaticon-006-swimming-pool:before { content: "\f105"; }
+.flaticon-007-sunset:before { content: "\f106"; }
+.flaticon-008-sunglasses:before { content: "\f107"; }
+.flaticon-009-suitcase:before { content: "\f108"; }
+.flaticon-010-goggle:before { content: "\f109"; }
+.flaticon-011-restaurant:before { content: "\f10a"; }
+.flaticon-012-postcard:before { content: "\f10b"; }
+.flaticon-013-adaptor:before { content: "\f10c"; }
+.flaticon-014-photo:before { content: "\f10d"; }
+.flaticon-015-passport:before { content: "\f10e"; }
+.flaticon-016-navigation:before { content: "\f10f"; }
+.flaticon-017-mountain:before { content: "\f110"; }
+.flaticon-018-map-1:before { content: "\f111"; }
+.flaticon-019-limousine:before { content: "\f112"; }
+.flaticon-020-landmark:before { content: "\f113"; }
+.flaticon-021-resort:before { content: "\f114"; }
+.flaticon-022-sign:before { content: "\f115"; }
+.flaticon-023-flip-flops:before { content: "\f116"; }
+.flaticon-024-map:before { content: "\f117"; }
+.flaticon-025-take-off:before { content: "\f118"; }
+.flaticon-026-boat:before { content: "\f119"; }
+.flaticon-027-compass:before { content: "\f11a"; }
+.flaticon-028-cocktail-1:before { content: "\f11b"; }
+.flaticon-029-cocktail:before { content: "\f11c"; }
+.flaticon-030-credit-card:before { content: "\f11d"; }
+.flaticon-031-camera:before { content: "\f11e"; }
+.flaticon-032-calendar:before { content: "\f11f"; }
+.flaticon-033-island:before { content: "\f120"; }
+.flaticon-034-beach:before { content: "\f121"; }
+.flaticon-035-around:before { content: "\f122"; }
+.flaticon-036-plane:before { content: "\f123"; }
+    
+    $font-Flaticon-001-wallet: "\f100";
+    $font-Flaticon-002-trekking: "\f101";
+    $font-Flaticon-003-boarding-pass: "\f102";
+    $font-Flaticon-004-train: "\f103";
+    $font-Flaticon-005-binoculars: "\f104";
+    $font-Flaticon-006-swimming-pool: "\f105";
+    $font-Flaticon-007-sunset: "\f106";
+    $font-Flaticon-008-sunglasses: "\f107";
+    $font-Flaticon-009-suitcase: "\f108";
+    $font-Flaticon-010-goggle: "\f109";
+    $font-Flaticon-011-restaurant: "\f10a";
+    $font-Flaticon-012-postcard: "\f10b";
+    $font-Flaticon-013-adaptor: "\f10c";
+    $font-Flaticon-014-photo: "\f10d";
+    $font-Flaticon-015-passport: "\f10e";
+    $font-Flaticon-016-navigation: "\f10f";
+    $font-Flaticon-017-mountain: "\f110";
+    $font-Flaticon-018-map-1: "\f111";
+    $font-Flaticon-019-limousine: "\f112";
+    $font-Flaticon-020-landmark: "\f113";
+    $font-Flaticon-021-resort: "\f114";
+    $font-Flaticon-022-sign: "\f115";
+    $font-Flaticon-023-flip-flops: "\f116";
+    $font-Flaticon-024-map: "\f117";
+    $font-Flaticon-025-take-off: "\f118";
+    $font-Flaticon-026-boat: "\f119";
+    $font-Flaticon-027-compass: "\f11a";
+    $font-Flaticon-028-cocktail-1: "\f11b";
+    $font-Flaticon-029-cocktail: "\f11c";
+    $font-Flaticon-030-credit-card: "\f11d";
+    $font-Flaticon-031-camera: "\f11e";
+    $font-Flaticon-032-calendar: "\f11f";
+    $font-Flaticon-033-island: "\f120";
+    $font-Flaticon-034-beach: "\f121";
+    $font-Flaticon-035-around: "\f122";
+    $font-Flaticon-036-plane: "\f123";
