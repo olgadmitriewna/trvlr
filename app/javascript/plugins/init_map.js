@@ -10,9 +10,10 @@ const initMap = () => {
     const marker = JSON.parse(mapElement.dataset.marker);
     mapElement.style.height = "900px"
     mapElement.style.width = "900px"
-    if (markers.length === 0) {
+    if (markers.length === 0 || markers[0].lat !== null) {
       map.setZoom(2);
     } else if (markers.length === 1) {
+      console.log(marker)
       map.setCenter(markers[0].lat, markers[0].lng);
       map.setZoom(14);
       map.addMarkers(markers)
