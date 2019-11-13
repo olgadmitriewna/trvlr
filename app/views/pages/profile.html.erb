@@ -1,22 +1,36 @@
-<div class="container mr-6 ml-6 pl-0">
+<div class="container m-6" id="profile-container">
   <div class="container mt-6">
     <div class="d-flex flex-column bd-highlight mb-2">
       <div class="p-2 m-6 bd-highlight text-center">
-          <% if current_user.facebook_picture_url %>
-          <%= image_tag current_user.facebook_picture_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% elsif current_user.photo %>
-          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% if @user.facebook_picture_url %>
+          <%= image_tag @user.facebook_picture_url, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% elsif @user.photo %>
+          <%= cl_image_tag @user.photo, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% else %>
-          <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "http://placehold.it/30x30", class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% end %>
       </div>
     </div>
   </div>
 
-  <div class="p-2 bd-highlight">
-    <h2 class="card-description text-center">Hello, I'm <%=@user.first_name%></h2>
+  <div class="profile-info">
+    <div class="bd-highlight mr-8 ml-8">
+      <h3 class="card-description text-center">Hello, I'm <%=@user.first_name%></h3>
+    </div>
+    <div class="profile-icons" id="social">
+      <p><i class="fab fa-instagram"></i> <%= @user.instagram_user_name %></p>
+      <p><i class="fab fa-facebook"></i> <%= @user.facebook_link %></p>
+    </div>
+    <div class="profile-icons" id="email">
+      <p><i class="far fa-envelope"></i> <%= @user.email %></p>
+    </div>
+    <div id="bio">
+      <p><%= @user.bio %></p>
+    </div>
   </div>
 
+  <div class="profile-chapters">
+    <h4 id="h4-profile">Interested in traveling to</h4>
 
   <h2 id="trtarget">I'm interested in traveling to</h2>
 
@@ -28,8 +42,6 @@
           <div class="country-card" id="country-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path country.photo %>)">
             <h2><%= country.name %></h2>
           </div>
-
-
 
   <% if @country == country %>
 
@@ -46,19 +58,20 @@
       <ul>
         <div class='phrases' style="grid-template-columns: 1fr;">
           <% @phrases.each do |phrase| %>
-            <li style="display: flex;">
-              <div class='english'>
-                <p> <%= phrase.english %> : </p>
-              </div>
-              <div class='translated'>
-                <%= phrase.translation %>
-              </div>
-            </li>
+          <li style="display: flex;">
+            <div class='english'>
+              <p> <%= phrase.english %> : </p>
+            </div>
+            <div class='translated'>
+              <%= phrase.translation %>
+            </div>
+          </li>
           <% end %>
         </div>
       </ul>
     </div>
-
+  </div>
+  
     <div class="tab-pane fade" id="pills-places" role="tabpanel" aria-labelledby="pills-places-tab">
       <div class="row justify-content-around full-width">
         <% @places.each do |user_place| %>
@@ -71,8 +84,11 @@
             </div>
           </div>
         <% end %>
+
       </div>
+      <% end %>
     </div>
+  </div>
 
   <% end %>
        <% end %>
@@ -80,25 +96,25 @@
   </div>
 </div>
 
-  <div>
-    <h2>Previous trvlr destinations</h2>
-    <p>Add places you’ve traveled to, so trvlrs can connect with you and ask questions about it</p>
+  <div class="profile-chapters">
+    <h4 id="h4-profile">Traveled to</h4>
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <p>Add places you’ve traveled to, so trvlrs can connect with you and ask questions about it</p>
       <%= form_tag visits_path, method: :post, class: "country-list" do |f| %>
-        <p><strong>Which country you been to?</strong></p>
-          <%= select_tag 'country_id', options_for_select(Country.all.collect{ |c| [c.name, c.id] }) %>
-          <%= submit_tag "Submit", class: "btn btn-primary"  %>
+      <%= select_tag 'country_id', options_for_select(Country.all.collect{ |c| [c.name, c.id] }) %>
+      <%= hidden_field :visits, :latitude %>
+      <%= hidden_field :visits, :longitude %>
+      <%= submit_tag "Add", class: "btn btn-primary"  %>
       <% end %>
-  </div>
-
-
-  <p><strong><%=@user.first_name%> has traveled to:</strong></p>
-    <% if @user.visits.any? %>
-      <ul>
-        <% @countries_visited.each do |c| %>
-          <li><%= c.name %></li>
-        <% end %>
-      </ul>
+    <% else %>
     <% end %>
-
+    <% if @user.visits.any? %>
+    <% @countries_visited.each do |c| %>
+    <div class="country-card" id="profile-country-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path c.photo %>)">
+      <h2><%= c.name %></h2>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
 
