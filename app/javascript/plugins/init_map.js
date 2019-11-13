@@ -7,17 +7,21 @@ const initMap = () => {
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
     map = new GMaps({ el: '#map', lat: 0, lng: 0 });
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log()
     const marker = JSON.parse(mapElement.dataset.marker);
     mapElement.style.height = "900px"
     mapElement.style.width = "900px"
     if (markers.length === 0 || markers[0].lat !== null) {
       map.setZoom(2);
+      map.addMarkers(markers)
+
     } else if (markers.length === 1) {
-      console.log(marker)
+      console.log("else if")
       map.setCenter(markers[0].lat, markers[0].lng);
       map.setZoom(14);
       map.addMarkers(markers)
     } else {
+      console.log("else")
       // map.fitLatLngBounds(markers);
       if (marker) {
         map.setCenter(marker.lat, marker.lng);
