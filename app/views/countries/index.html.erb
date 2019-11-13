@@ -50,5 +50,23 @@
   </div>
   <div class="container">
     <%= render 'map' %>
+   <div class="row">
+    <% @users.each do |user| %>
+      <% unless user == current_user %>
+      <div class="user-card col-3">
+        <%= link_to profile_path(user), class:" d-flex" do  %>
+              <% if user.facebook_picture_url %>
+              <%= image_tag user.facebook_picture_url, class: "avatar" %>
+              <% elsif !user.photo.blank? %>
+              <%= cl_image_tag user.photo, class: "avatar"%>
+              <% else %>
+              <%= image_tag "http://placehold.it/30x30", class: "avatar"%>
+              <% end %>
+            <p><%= user.first_name %></p>
+          </div>
+
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
 </div>

@@ -17,5 +17,3 @@ import { navbarToggler } from '../components/navbar';
 
 navbarToggler()
 
-const markersImage = document.querySelectorAll('#map img');
-console.log(markersImage);
