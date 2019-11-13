@@ -1,7 +1,8 @@
 import "bootstrap";
 import { initMap } from '../plugins/init_map';
 import { navbarToggler } from '../components/navbar';
-initMap()
+import { toggleIphoneNavbar } from '../components/iphoneNavbar'
+initMap();
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   navigator.geolocation.getCurrentPosition((position) => {
@@ -15,5 +16,5 @@ initMap()
 //   })
 // })
 
-navbarToggler()
-
+navbarToggler();
+toggleIphoneNavbar();
