@@ -23,19 +23,19 @@ const initMap = () => {
         map.addMarkers(marker);
         map.addMarkers(markers);
       } else {
+        map.setCenter(markers[0].lat, markers[0].lng);
         const gMapMarkers = markers.map(marker => {
           var marker = new google.maps.Marker({
             position: new google.maps.LatLng(marker.lat, marker.lng),
             map: map,
             icon: marker.user_photo
-            // scaledSize: new google.maps.Size(20, 20),
           })
           return marker;
         })
         map.addMarkers(gMapMarkers);
-        map.setCenter(markers[0].lat, markers[0].lng);
+        map.setZoom(2)
       }
-      map.setZoom(2)
+      map.setZoom(4)
     }
   }
 }
