@@ -9,7 +9,9 @@ class CountriesController < ApplicationController
     @markers = @visits.map do |visit|
       {
         lat: visit.latitude,
-        lng: visit.longitude
+        lng: visit.longitude,
+        infoWindow: { content: render_to_string(partial: "/countries/user_box", locals: { visit: visit }) }
+
       }
     end
   end
