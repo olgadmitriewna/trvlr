@@ -5,8 +5,6 @@ require "json"
 require "rest-client"
 require 'csv'
 
-#USERS
-
 # puts 'creating users'
 Phrase.destroy_all
 Vocabulary.destroy_all
@@ -14,16 +12,70 @@ Place.destroy_all
 Country.destroy_all
 User.destroy_all
 
-user = User.new(first_name: 'Olga', email: 'olga@gmail.com', password: "password")
+#USERS
+
+user = User.new(id: 1, email: "o.d.vrnn@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Olga", bio: "I love to travel and connect with other people.", facebook_link: "olgadmitriewna", instagram_user_name: "olgadmitriewna", password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199222/mcffdaj59crbiisckibf.png"
 user.save!
 
-user = User.new(first_name: 'Jesh', email: 'jesh@gmail.com', password: "password")
+user = User.new(id: 2, email: "jesh@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Jesh", bio: "I love to travel and connect with other people.", facebook_link: "jesh", instagram_user_name: "jesh", password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1573699231/duthzdxpumjs2addpisz.png"
 user.save!
 
-user = User.new(first_name: 'Elise', email: 'elise@gmail.com', password: "password")
+user = User.new(id: 3, email: "elise@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Elise", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199233/yn45g3uxrj0zv09pda7c.png"
+user.save!
+
+user = User.new(id: 4, email: "carla@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Carla", bio: "I love to travel and connect with other people. Shoot me a message on Instagram if you have any questions. Keep trvln 💛", facebook_link: nil, instagram_user_name: "carlacarmina", password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199244/yqvcskphj6foagjoi1ya.png"
+user.save!
+
+user = User.new(id: 5, email: "john@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "John", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1573699259/myshc1dn9cxaex79cxf3.png"
+user.save!
+
+user = User.new(id: 6, email: "lucas@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Lucas", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199259/szhpexjadmrkjkr5uifm.png"
+user.save!
+
+user = User.new(id: 7, email: "luka@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Luka", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1573699259/y361nixpedb08m0ki7mp.png"
+user.save!
+
+user = User.new(id: 8, email: "andrea@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Andrea", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199259/psvhqgqwu7castxdobgg.png"
+user.save!
+
+user = User.new(id: 9, email: "marie@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Marie", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1573699259/vhaqwyulqdthidomsge5.png"
+user.save!
+
+user = User.new(id: 10, email: "trish@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Trish", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1573699260/l9d46jifzezvhgwb28zz.png"
+user.save!
+
+user = User.new(id: 11, email: "nadja@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Nadja", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199264/gaqfyqbr2syfokevlz8x.png"
+user.save!
+
+user = User.new(id: 12, email: "polina@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Polina", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199264/dpdu5m1pr8lhjxpkfohh.png"
+user.save!
+
+user = User.new(id: 13, email: "nina@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Nina", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199266/mry6fvqrmmskicsk7cbh.png"
+user.save!
+
+user = User.new(id: 14, email: "gil@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Gil", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199272/dvmemxkiyhrd0lsi5tzi.png"
+user.save!
+
+user = User.new(id: 15, email: "manuel@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Manuel", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199353/wj2sla0cgozghslzfbyv.png"
 user.save!
 
 puts 'users created'
+
 
 #COUNTRIES
 
@@ -92,6 +144,8 @@ countries_list = {
       name = "Iran"
       when "Russian Federation"
       name = "Russia"
+      when "United States of America"
+      name = "America"
       else
       name = data.first["name"]
     end
@@ -140,6 +194,8 @@ end
 
 #PLACES
 
+puts "creating places"
+
 filepath = Rails.root.join('db/data/places.csv')
 
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
@@ -156,7 +212,11 @@ CSV.foreach(filepath, csv_options) do |row|
 
 end
 
+puts "places created"
+
 #VOCABULARY
+
+puts "creating vocabs"
 
 malay_vocab = Vocabulary.new(country: Country.where(name: 'Singapore').first)
 chinese_vocab = Vocabulary.new(country: Country.where(name: 'China').first)
@@ -215,6 +275,8 @@ french_words.each do |word|
   )
 end
 
+puts "vocabs created"
+
 # CULTURE
 # chinese_culture = Culture.new(country: Country.where(name: 'China').first)
 
@@ -232,4 +294,215 @@ end
 #     translation: word[:translation]
 #   )
 # end
+
+# INTERESTS
+
+puts "creating interests"
+
+interest = Interest.new( user_id: 1, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 2, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 3, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 4, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 5, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 6, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 7, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 8, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 9, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 10, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 11, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 12, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 13, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 14, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 15, country_id: 30)
+interest.save!
+interest = Interest.new( user_id: 1, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 2, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 3, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 4, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 5, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 6, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 7, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 8, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 9, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 10, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 11, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 12, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 13, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 14, country_id: 1)
+interest.save!
+interest = Interest.new( user_id: 15, country_id: 1)
+interest.save!
+
+interest = Interest.new( user_id: 1, country_id: 22)
+interest.save!
+interest = Interest.new( user_id: 2, country_id: 22)
+interest.save!
+interest = Interest.new( user_id: 3, country_id: 22)
+interest.save!
+interest = Interest.new( user_id: 4, country_id: 22)
+interest.save!
+
+interest = Interest.new( user_id: 12, country_id: 3)
+interest.save!
+interest = Interest.new( user_id: 10, country_id: 3)
+interest.save!
+interest = Interest.new( user_id: 7, country_id: 3)
+interest.save!
+
+interest = Interest.new( user_id: 3, country_id: 23)
+interest.save!
+interest = Interest.new( user_id: 8, country_id: 23)
+interest.save!
+interest = Interest.new( user_id: 9, country_id: 23)
+interest.save!
+
+interest = Interest.new( user_id: 5, country_id: 16)
+interest.save!
+interest = Interest.new( user_id: 6, country_id: 16)
+interest.save!
+interest = Interest.new( user_id: 7, country_id: 16)
+interest.save!
+
+interest = Interest.new( user_id: 5, country_id: 13)
+interest.save!
+interest = Interest.new( user_id: 6, country_id: 13)
+interest.save!
+interest = Interest.new( user_id: 7, country_id: 13)
+interest.save!
+
+puts 'intersts created'
+
+# VISITS
+
+  puts "creating Visits"
+
+  visit = Visit.new( user_id: 1, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 2, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 3, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 4, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 5, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 6, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 7, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 8, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 9, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 10, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 11, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 12, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 13, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 14, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 15, country_id: 11,  longitude: -102.552784, latitude: 23.634501)
+  visit.save!
+  visit = Visit.new( user_id: 1, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 2, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 3, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 4, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 5, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 6, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 7, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 8, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 9, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 10, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 11, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 12, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 13, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 14, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+  visit = Visit.new( user_id: 15, country_id: 20, longitude: 104.195397, latitude: 35.86166)
+  visit.save!
+
+  visit = Visit.new( user_id: 1, country_id: 32, longitude: 12.56738, latitude: 41.87194)
+  visit.save!
+  visit = Visit.new( user_id: 2, country_id: 32, longitude: 12.56738, latitude: 41.87194)
+  visit.save!
+  visit = Visit.new( user_id: 3, country_id: 32, longitude: 12.56738, latitude: 41.87194)
+  visit.save!
+  visit = Visit.new( user_id: 4, country_id: 32, longitude: 12.56738, latitude: 41.87194)
+  visit.save!
+
+  visit = Visit.new( user_id: 12, country_id: 17, longitude: -77.781167, latitude: 21.521757)
+  visit.save!
+  visit = Visit.new( user_id: 10, country_id: 17, longitude: -77.781167, latitude: 21.521757)
+  visit.save!
+  visit = Visit.new( user_id: 7, country_id: 17, longitude: -77.781167, latitude: 21.521757)
+  visit.save!
+
+  visit = Visit.new( user_id: 3, country_id: 18, longitude: -75.015152, latitude: -9.189967)
+  visit.save!
+  visit = Visit.new( user_id: 8, country_id: 18, longitude: -75.015152, latitude: -9.189967)
+  visit.save!
+  visit = Visit.new( user_id: 9, country_id: 18, longitude: -75.015152, latitude: -9.189967)
+  visit.save!
+
+  visit = Visit.new( user_id: 5, country_id: 22,  longitude: 138.252924, latitude: 36.204824)
+  visit.save!
+  visit = Visit.new( user_id: 6, country_id: 22,  longitude: 138.252924, latitude: 36.204824)
+  visit.save!
+  visit = Visit.new( user_id: 7, country_id: 22,  longitude: 138.252924, latitude: 36.204824)
+  visit.save!
+
+  visit = Visit.new( user_id: 5, country_id: 37, longitude: 21.824312, latitude: 39.074208)
+  visit.save!
+  visit = Visit.new( user_id: 6, country_id: 37, longitude: 21.824312, latitude: 39.074208)
+  visit.save!
+  visit = Visit.new( user_id: 7, country_id: 37, longitude: 21.824312, latitude: 39.074208)
+  visit.save!
+
+  puts 'visits created'
+
+
+
 
