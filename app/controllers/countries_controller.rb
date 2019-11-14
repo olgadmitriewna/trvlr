@@ -10,7 +10,8 @@ class CountriesController < ApplicationController
       {
         lat: visit.latitude,
         lng: visit.longitude,
-        infoWindow: { content: render_to_string(partial: "/countries/user_box", locals: { visit: visit }) }
+        infoWindow: { content: render_to_string(partial: "/countries/user_box", locals: { visit: visit }) },
+        icon: helpers.asset_url('user_marker.svg')
 
       }
     end

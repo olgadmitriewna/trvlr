@@ -221,6 +221,28 @@ puts "creating vocabs"
 malay_vocab = Vocabulary.new(country: Country.where(name: 'Singapore').first)
 chinese_vocab = Vocabulary.new(country: Country.where(name: 'China').first)
 french_vocab = Vocabulary.new(country_id: Country.where(name: 'France').first)
+spanish_vocab = Vocabulary.new(country: Country.where(name: 'Mexico').first)
+
+
+spanish_words = [
+  {translation: 'Hola', english: 'Hello'},
+  {translation: 'Adiós', english: 'Goodbye'},
+  {translation: 'Cómo estás?', english: 'How are you?'},
+  {translation: 'Cuanto cuesta?', english: 'How much does it cost?'},
+  {translation: 'Como llego a..?', english: 'How do I get to..?'},
+  {translation: 'si', english: 'Yes'},
+  {translation: 'No', english: 'No'},
+  { translation:'Puedo tener..?', english: 'Can I have..?' },
+  { translation:'Gracias', english: 'Thank you' }
+]
+
+spanish_words.each do |word|
+  Phrase.create!(
+    vocabulary: spanish_vocab,
+    english: word[:english],
+    translation: word[:translation]
+  )
+end
 
 malay_words = [
   {translation: 'Hello', english: 'Hello'},
