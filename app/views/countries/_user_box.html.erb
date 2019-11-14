@@ -1,7 +1,21 @@
-<%= visit.user.first_name %>
+<div class="row">
+  <% @users.each do |user| %>
+    <% unless user == current_user %>
+      <% unless user.visits.where(country_id: visit.country.id).empty? %>
+        <div class="user-card col-3">
+          <%= link_to profile_path(user), class:" d-flex" do  %>
+            <% if user.facebook_picture_url %>
+              <%= image_tag user.facebook_picture_url, class: "avatar" %>
+            <% elsif !user.photo.blank? %>
+              <%= cl_image_tag user.photo, class: "avatar"%>
+            <% else %>
+              <%= link_to 'Connect', profile_path(user) %>
+              <%= image_tag "http://placehold.it/30x30", class: "avatar"%>
+            <% end %>
 
-<%= link_to "connect", profile_path(visit.user) %>
-
-<%= cl_image_tag visit.user.photo %>
-<img src="<%= visit.user.facebook_picture_url ? visit.user.facebook_picture_url : "http://placehold.it/30x30" %>
-" alt="">
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
