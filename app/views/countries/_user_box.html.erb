@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="user-box">
   <% @users.each do |user| %>
     <% unless user == current_user %>
       <% unless user.visits.where(country_id: visit.country.id).empty? %>

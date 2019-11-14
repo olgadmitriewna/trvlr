@@ -1,0 +1,39 @@
+#user-box {
+  // display: -webkit-box;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: baseline;
+}
+
+.user-card {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 0px;
+  width: 1px;
+}
+
+.gm-style .gm-style-iw-c {
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-100%);
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 7px 1px rgba(0,0,0,0.3);
+}
+
+.row {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 8px;
+    margin-bottom: 8px;
+}
+
+#map {
+  margin-bottom: 16px;
+}
