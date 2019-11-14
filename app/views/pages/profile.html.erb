@@ -73,6 +73,19 @@
     </div>
   </div>
 
+    <div class="tab-pane fade" id="pills-places" role="tabpanel" aria-labelledby="pills-places-tab">
+      <div class="row justify-content-around full-width">
+        <% @places.each do |user_place| %>
+          <div class="info-window col-xs-12">
+            <div class="d-flex" style='flex-direction: column;'>
+              <h1><%= user_place.place.name %></h1>
+              <img class="place-img" src="<%= user_place.place.photo%>" >
+              <p><b>City:</b> <%= user_place.place.city %></p>
+              <%= link_to 'More info', user_place.place.link, class: "btn btn-flat btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+
   <div class="tab-pane fade" id="pills-places" role="tabpanel" aria-labelledby="pills-places-tab">
     <div class="row justify-content-around">
       <% @places.each do |user_place| %>
@@ -89,6 +102,10 @@
   </div>
 
   <% end %>
+  <% end %>
+  </div>
+</div>
+
 
   <div class="profile-chapters">
     <h4 id="h4-profile">Traveled to</h4>
@@ -100,7 +117,6 @@
       <%= hidden_field :visits, :longitude %>
       <%= submit_tag "Add", class: "btn btn-primary"  %>
       <% end %>
-    <% else %>
     <% end %>
     <% if @user.visits.any? %>
     <% @countries_visited.each do |c| %>
