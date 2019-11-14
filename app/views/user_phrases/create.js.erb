@@ -8,6 +8,5 @@ function addPhrase(phraseHTML) {
   phrases.insertAdjacentHTML('beforeend', phraseHTML);
 }
 
-addedPhrase = document.querySelector("#added")
 statusDiv = document.querySelector("[data-phrase='<%= @user_phrase.phrase.id %>']")
-statusDiv.innerText = addedPhrase.innerText
+statusDiv.innerText = "Added"

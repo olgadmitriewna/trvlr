@@ -4,7 +4,18 @@ class UserPlacesController < ApplicationController
     @user_place.user = current_user
     place = Place.find(params[:user_place][:place])
     @user_place.place = place
-    @user_place.save
+    if @user_place.save!
+      respond_to do |format|
+      format.html { redirect_to country_path(place.country) }
+      format.js
+      end
+    else
+      respond_to do |format|
+        # format.html { render 'create' }
+        format.js  # <-- idem
+      end
+    end
+
     # redirect
     # if @user_place.save!
       # redirect_to profile_path(current_user)

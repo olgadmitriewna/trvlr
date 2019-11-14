@@ -1,0 +1,15 @@
+function refreshForm(innerHTML) {
+ const newPlaceForm =  document.getElementById('new_place');
+  newPlaceForm.innerHTML = innerHTML;
+}
+
+function addPlace(placeHTML) {
+  const place = document.getElementById('places');
+  phrases.insertAdjacentHTML('beforeend', phraseHTML);
+}
+
+
+statusDiv = document.querySelector("[data-place='<%= @user_place.place.id %>']")
+statusDiv.innerText = "Added"
+
+console.log("hereeeeeeeeee")
