@@ -1,20 +1,20 @@
 const navbarToggler = () => {
-  $(document).ready(function () {
+  let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
-    $('.first-button').on('click', function () {
-
+  $(document).ready(function() {
+    $('.first-button').on(touchEvent, function() {
       $('.animated-icon1').toggleClass('open');
     });
-    $('.second-button').on('click', function () {
 
+    $('.second-button').on(touchEvent, function() {
       $('.animated-icon2').toggleClass('open');
     });
-    $('.third-button').on('click', function () {
 
+    $('.third-button').on(touchEvent, function() {
       $('.animated-icon3').toggleClass('open');
     });
   });
-
+console.log('callled')
 }
 
-export { navbarToggler }
+export { navbarToggler };

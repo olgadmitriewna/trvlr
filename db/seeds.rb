@@ -14,16 +14,16 @@ Place.destroy_all
 Country.destroy_all
 User.destroy_all
 
-# user = User.new(first_name: 'Olga', email: 'olga@gmail.com', password: "password")
-# user.save!
+user = User.new(first_name: 'Olga', email: 'olga@gmail.com', password: "password")
+user.save!
 
-# user = User.new(first_name: 'Jesh', email: 'jesh@gmail.com', password: "password")
-# user.save!
+user = User.new(first_name: 'Jesh', email: 'jesh@gmail.com', password: "password")
+user.save!
 
-# user = User.new(first_name: 'Elise', email: 'elise@gmail.com', password: "password")
-# user.save!
+user = User.new(first_name: 'Elise', email: 'elise@gmail.com', password: "password")
+user.save!
 
-# puts 'users created'
+puts 'users created'
 
 #COUNTRIES
 
