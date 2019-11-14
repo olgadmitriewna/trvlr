@@ -13,7 +13,7 @@ class UserPhrasesController < ApplicationController
   else
       respond_to do |format|
         format.html { render 'create' }
-        format.js  # <-- idem
+        format.js # <-- idem
       end
     end
   end
