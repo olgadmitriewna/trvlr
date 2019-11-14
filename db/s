@@ -1,0 +1,63 @@
+#USERS
+
+user = User.new(id: 1, email: "o.d.vrnn@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Olga", bio: "I love to travel and connect with other people.", facebook_link: "olgadmitriewna", instagram_user_name: "olgadmitriewna", password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199222/mcffdaj59crbiisckibf.png"
+user.save!
+
+user = User.new(id: 2, email: "jesh@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Jesh", bio: "I love to travel and connect with other people.", facebook_link: "jesh", instagram_user_name: "jesh", password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199222/.png"
+user.save!
+
+user = User.new(id: 3, email: "elise@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Elise", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199233/yn45g3uxrj0zv09pda7c.png"
+user.save!
+
+user = User.new(id: 4, email: "carla@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Carla", bio: "I love to travel and connect with other people. Shoot me a message on Instagram if you have any questions. Keep trvln 💛", facebook_link: nil, instagram_user_name: "carlacarmina", password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199244/yqvcskphj6foagjoi1ya.png"
+user.save!
+
+user = User.new(id: 5, email: "john@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "John", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199259/myshc1dn9cxaex79cxf3.png"
+user.save!
+
+user = User.new(id: 6, email: "lucas@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Lucas", bio: "I love to travel and connect with other people." facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199259/szhpexjadmrkjkr5uifm.png"
+user.save!
+
+user = User.new(id: 7, email: "luka@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Luka", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199259/y111nixpedb08m0ki7mp.png"
+user.save!
+
+user = User.new(id: 8, email: "andrea@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Andrea", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199259/psvhqgqwu7castxdobgg.png"
+user.save!
+
+user = User.new(id: 9, email: "marie@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Marie", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199259/vhaqwyulqdthidomsge5.png"
+user.save!
+
+user = User.new(id: 10, email: "trish@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Trish", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199260/l9d46jifzezvhgwb28zz.png"
+user.save!
+
+user = User.new(id: 11, email: "nadja@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Nadja", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199264/gaqfyqbr2syfokevlz8x.png"
+user.save!
+
+user = User.new(id: 12, email: "polina@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Polina", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199264/dpdu5m1pr8lhjxpkfohh.png"
+user.save!
+
+user = User.new(id: 13, email: "nina@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Nina", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199266/mry6fvqrmmskicsk7cbh.png"
+user.save!
+
+user = User.new(id: 14, email: "gil@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Gil", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199272/dvmemxkiyhrd0lsi5tzi.png"
+user.save!
+
+user = User.new(id: 15, email: "manuel@gmail.com", created_at: "1119-11-13 14:02:37", updated_at: "1119-11-13 14:04:04", first_name: "Manuel", bio: "I love to travel and connect with other people.", facebook_link: nil, instagram_user_name: nil, password: "password")
+user.remote_photo_url = "https://res.cloudinary.com/dy0ujbaxb/image/upload/v1571199353/wj2sla0cgozghslzfbyv.png"
+user.save!
+
+puts 'users created'

@@ -32,6 +32,7 @@
   <div class="profile-chapters">
     <h4 id="h4-profile">Interested in traveling to</h4>
 
+
   <!-- <h2 id="trtarget"> -->
 
 
@@ -43,7 +44,8 @@
             <h2><%= country.name %></h2>
           </div>
 
-  <% if @country == country %>
+    <% if @country %>
+
 
     <ul class="nav nav-pills no-shadow mb-3" id="pills-tab" role="tablist">
       <li class="nav-item ">
@@ -85,15 +87,26 @@
           </div>
         <% end %>
 
+  <div class="tab-pane fade" id="pills-places" role="tabpanel" aria-labelledby="pills-places-tab">
+    <div class="row justify-content-around">
+      <% @places.each do |user_place| %>
+      <div class="info-window col-xs-6">
+        <div class="d-flex" style='flex-direction: column;'>
+          <h1><%= user_place.place.name %></h1>
+          <img class="place-img" src="<%= user_place.place.photo%>" >
+          <p><b>City:</b> <%= user_place.place.city %></p>
+          <%= link_to 'More info', user_place.place.link, class: "btn btn-flat btn-primary" %>
+        </div>
       </div>
       <% end %>
     </div>
   </div>
 
   <% end %>
-         <% end %>
+  <% end %>
   </div>
 </div>
+
 
   <div class="profile-chapters">
     <h4 id="h4-profile">Traveled to</h4>
