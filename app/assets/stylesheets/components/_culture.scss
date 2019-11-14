@@ -4,14 +4,14 @@
     border-bottom: 3px solid;
     border-bottom-color: #FFD364;
     height: 41px;
-    font-size: 24px;
+    font-size: 25px;
     margin: 10px;
 }
 .culture h4 {
-  font-size: 22px;
+  font-size: 20px;
 }
 .culture p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .culture {
@@ -27,11 +27,11 @@ img{
 }
 
 
-$midnight: #4d4d4d;
+$lightgrey: #f0f0f0;
 $clouds: #ecf0f1;
 // General
 .culture body {
-  color: $midnight;
+  color: $lightgrey;
   background: $clouds;
   padding: 0 1em 1em;
 }
@@ -67,18 +67,18 @@ $clouds: #ecf0f1;
 }
 .culture .tab {
   width: 100%;
-  color: white;
+  color: black;
   overflow: hidden;
   &-label {
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    background: $midnight;
+    background: $lightgrey;
     font-weight: bold;
     cursor: pointer;
     /* Icon */
     &:hover {
-      background: darken($midnight, 10%);
+      background: darken($lightgrey, 10%);
     }
     &::after {
       content: "\276F";
@@ -91,7 +91,7 @@ $clouds: #ecf0f1;
   &-content {
     max-height: 0;
     padding: 0 1em;
-    color: $midnight;
+    color: black;
     background: white;
     transition: all .35s;
   }
@@ -99,11 +99,11 @@ $clouds: #ecf0f1;
     display: flex;
     justify-content: flex-end;
     padding: 1em;
-    font-size: 0.75em;
-    background: $midnight;
+    font-size: 16px;
+    background: $lightgrey;
     cursor: pointer;
     &:hover {
-      background: darken($midnight, 10%);
+      background: darken($lightgrey, 10%);
     }
   }
 }
@@ -111,7 +111,7 @@ $clouds: #ecf0f1;
 // :checked
 .culture input:checked {
   + .tab-label {
-    background: darken($midnight, 10%);
+    background: darken($lightgrey, 10%);
     &::after {
       transform: rotate(90deg);
     }
