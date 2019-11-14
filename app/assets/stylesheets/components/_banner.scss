@@ -1,24 +1,24 @@
 .banner {
   background-size: cover;
   background-position: center;
-  height: 484px;
-  margin-top: -60px;
+  height: 480px;
+  margin-top: -56px;
   width: 100%;
   background-attachment: inherit;
   display: flex;
   align-items: flex-end;
-  border-bottom: 6px solid $yellow;
+  border-bottom: 8px solid $yellow;
 }
 
 .banner h1 {
-  width: 180px;
+  width: 184px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  font-size: 31px;
+  font-size: 25px;
   color: black;
   // font-weight: bold;
   display: flex;
   text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.22);
-  margin-bottom: 217px;
+  margin-bottom: 216px;
   // margin-left: 36px;
   // text-align: center;
 }
@@ -32,7 +32,7 @@
 
 @media screen and (min-width: 480px) {
  .banner {
-    height: 475px;
+    height: 480px;
  }
 }
 
