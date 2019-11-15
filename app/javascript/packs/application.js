@@ -2,6 +2,7 @@ import "bootstrap";
 import { initMap } from '../plugins/init_map';
 import { navbarToggler } from '../components/navbar';
 import { toggleIphoneNavbar } from '../components/iphoneNavbar'
+import { toggleProfileBanner } from '../components/profileBanner'
 initMap();
 
 // document.addEventListener('DOMContentLoaded', () => {
@@ -18,3 +19,4 @@ initMap();
 
 navbarToggler();
 toggleIphoneNavbar();
+toggleProfileBanner()

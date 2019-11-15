@@ -33,7 +33,7 @@ const initMap = () => {
         const gMapMarkers = markers.map(marker => {
 
             var infowindow = new google.maps.InfoWindow({
-            content: marker.infoWindow.conten
+            content: marker.infoWindow.content
               });
 
           var icon = {

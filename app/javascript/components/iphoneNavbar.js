@@ -1,6 +1,7 @@
 const burgerMenu = document.querySelector(".navbar-toggler");
 var iOS = !!navigator.platform && /iPad|iPhone|iPod/i.test(navigator.platform);
 var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+var isIphone = /iPhone/i.test(navigator.userAgent)
 const banner = document.querySelector(".banner")
 const countryBanner = document.querySelector(".country-banner")
 const nav = document.querySelector(".navbar")

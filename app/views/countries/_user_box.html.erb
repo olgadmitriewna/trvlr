@@ -2,7 +2,7 @@
   <% @users.each do |user| %>
     <% unless user == current_user %>
       <% unless user.visits.where(country_id: visit.country.id).empty? %>
-        <div class="user-card col-3">
+        <div class="user-card col-4">
           <%= link_to profile_path(user), class:" d-flex" do  %>
             <% if user.facebook_picture_url %>
               <%= image_tag user.facebook_picture_url, class: "avatar" %>
