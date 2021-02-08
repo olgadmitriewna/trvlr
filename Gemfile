@@ -24,7 +24,7 @@ gem 'nokogiri'
 gem 'geocoder'
 gem 'sprockets', '~> 3.7.2'
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'typekit-rails'
 gem 'serviceworker-rails'
 
